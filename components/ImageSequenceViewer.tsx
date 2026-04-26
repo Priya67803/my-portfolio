@@ -13,11 +13,14 @@ interface ImageSequenceViewerProps {
 export default function ImageSequenceViewer({ folderName, frameCount, className }: ImageSequenceViewerProps) {
     const [frameIndex, setFrameIndex] = useState(1);
     const [isHovered, setIsHovered] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+
+    const isAnimating = isHovered || isClicked;
 
     useEffect(() => {
         let interval: ReturnType<typeof setInterval>;
 
-        if (isHovered) {
+        if (isAnimating) {
             interval = setInterval(() => {
                 setFrameIndex((prev) => (prev % frameCount) + 1);
             }, 50);
@@ -28,16 +31,17 @@ export default function ImageSequenceViewer({ folderName, frameCount, className 
         return () => {
             if (interval) clearInterval(interval);
         };
-    }, [isHovered, frameCount]);
+    }, [isAnimating, frameCount]);
 
     const paddedIndex = frameIndex.toString().padStart(3, "0");
     const imageSrc = `/${folderName}/ezgif-frame-${paddedIndex}.jpg`;
 
     return (
         <div
-            className={cn("w-full h-48 bg-gray-900 rounded-t-xl overflow-hidden relative", className)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className={cn("w-full h-48 bg-gray-900 rounded-t-xl overflow-hidden relative cursor-pointer", className)}
+            onPointerEnter={() => setIsHovered(true)}
+            onPointerLeave={() => setIsHovered(false)}
+            onClick={() => setIsClicked(!isClicked)}
         >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -50,10 +54,10 @@ export default function ImageSequenceViewer({ folderName, frameCount, className 
                 }}
             />
 
-            {!isHovered && (
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            {!isAnimating && (
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none">
                     <span className="text-white text-sm font-medium tracking-widest uppercase opacity-70">
-                        Hover to animate
+                        Hover or Click to animate
                     </span>
                 </div>
             )}
