@@ -68,11 +68,15 @@ export default function Portfolio() {
                                 </Badge>
                             </motion.div>
 
-                            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+                            <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl lg:text-[7rem] font-extrabold text-white tracking-tighter leading-[1.05] mb-6 drop-shadow-2xl">
                                 Priyadarshini V<br />
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
+                                <motion.span 
+                                    className="block mt-2 text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:200%_auto]"
+                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                                    transition={{ duration: 5, ease: "linear", repeat: Infinity }}
+                                >
                                     AI/ML Engineer
-                                </span>
+                                </motion.span>
                             </motion.h1>
 
                             <motion.p variants={fadeInUp} className="text-xl text-slate-400 max-w-xl leading-relaxed mt-6">
