@@ -68,10 +68,10 @@ export default function Portfolio() {
                                 </Badge>
                             </motion.div>
 
-                            <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl lg:text-[7rem] font-extrabold text-white tracking-tighter leading-[1.05] mb-6 drop-shadow-2xl">
+                            <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-2xl">
                                 Priyadarshini V<br />
                                 <motion.span 
-                                    className="block mt-2 text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:200%_auto]"
+                                    className="block mt-2 text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:200%_auto]"
                                     animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                                     transition={{ duration: 5, ease: "linear", repeat: Infinity }}
                                 >
@@ -437,7 +437,7 @@ export default function Portfolio() {
                             <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
                                 <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                             </a>
-                            <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
+                            <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
                                 <Linkedin className="w-5 h-5 group-hover:-rotate-12 transition-transform" />
                             </a>
                             <a href="mailto:priya6780@gmail.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">

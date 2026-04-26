@@ -21,26 +21,21 @@ export default function AntiGravitySkill({ name }: { name: string }) {
     return (
         <motion.div
             className="relative flex items-center justify-center px-6 py-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md cursor-pointer hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-shadow"
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-            animate={
-                isHovered
-                    ? {
-                        y: -10,
-                        rotateX: rotateX,
-                        rotateY: rotateY,
-                        scale: 1.1,
-                        transition: { type: "spring", stiffness: 300, damping: 20 },
-                    }
-                    : {
-                        y: [0, -randomY, 0],
-                        transition: {
-                            duration: randomDuration,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        },
-                    }
-            }
+            whileHover={{
+                y: -10,
+                rotateX: rotateX,
+                rotateY: rotateY,
+                scale: 1.1,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+            }}
+            animate={{
+                y: [0, -randomY, 0],
+            }}
+            transition={{
+                duration: randomDuration,
+                repeat: Infinity,
+                ease: "easeInOut",
+            }}
             style={{ perspective: 1000 }}
         >
             <span className="text-cyan-50 font-semibold tracking-wide">

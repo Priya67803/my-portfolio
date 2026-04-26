@@ -22,15 +22,13 @@ export default function ImageSequenceViewer({ folderName, frameCount, className 
                 setFrameIndex((prev) => (prev % frameCount) + 1);
             }, 50);
         } else {
-            if (frameIndex !== 1) {
-                setFrameIndex(1);
-            }
+            setFrameIndex(1);
         }
 
         return () => {
             if (interval) clearInterval(interval);
         };
-    }, [isHovered, frameCount, frameIndex]);
+    }, [isHovered, frameCount]);
 
     const paddedIndex = frameIndex.toString().padStart(3, "0");
     const imageSrc = `/${folderName}/ezgif-frame-${paddedIndex}.jpg`;
