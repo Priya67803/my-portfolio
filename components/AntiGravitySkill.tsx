@@ -1,21 +1,21 @@
 "use client";
-/* eslint-disable react-hooks/set-state-in-effect */
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function AntiGravitySkill({ name }: { name: string }) {
-    const [isHovered, setIsHovered] = useState(false);
     const [randomY, setRandomY] = useState(10);
     const [randomDuration, setRandomDuration] = useState(4);
     const [rotateX, setRotateX] = useState(0);
     const [rotateY, setRotateY] = useState(0);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setRandomY(Math.random() * 15 + 10);
         setRandomDuration(Math.random() * 2 + 3);
         setRotateX(Math.random() * 20 - 10);
         setRotateY(Math.random() * 20 - 10);
+        setMounted(true);
     }, []);
 
     return (
@@ -28,9 +28,9 @@ export default function AntiGravitySkill({ name }: { name: string }) {
                 scale: 1.1,
                 transition: { type: "spring", stiffness: 300, damping: 20 },
             }}
-            animate={{
+            animate={mounted ? {
                 y: [0, -randomY, 0],
-            }}
+            } : { y: 0 }}
             transition={{
                 duration: randomDuration,
                 repeat: Infinity,
