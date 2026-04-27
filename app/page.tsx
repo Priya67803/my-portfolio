@@ -19,8 +19,23 @@ export default function Portfolio() {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.15 }
+            transition: { staggerChildren: 0.2 }
         }
+    };
+
+    const slideInLeft: Variants = {
+        hidden: { opacity: 0, x: -100 },
+        visible: { opacity: 1, x: 0, transition: { type: "spring", bounce: 0.4, duration: 0.8 } }
+    };
+
+    const slideInRight: Variants = {
+        hidden: { opacity: 0, x: 100 },
+        visible: { opacity: 1, x: 0, transition: { type: "spring", bounce: 0.4, duration: 0.8 } }
+    };
+
+    const slideUp: Variants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { type: "spring", bounce: 0.3, duration: 0.6 } }
     };
 
     const coreSkills = [
@@ -105,7 +120,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* Executive Summary */}
-                <section id="about" className="py-32">
+                <section id="about" className="py-32 overflow-hidden">
                     <motion.div 
                         className="max-w-4xl mx-auto px-6 text-center"
                         initial="hidden"
@@ -113,13 +128,13 @@ export default function Portfolio() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
                     >
-                        <motion.div variants={fadeInUp} className="inline-block mb-6">
+                        <motion.div variants={slideInLeft} className="inline-block mb-6">
                             <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto" />
                         </motion.div>
-                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-white mb-10">
+                        <motion.h2 variants={slideInRight} className="text-4xl md:text-5xl font-bold text-white mb-10">
                             Research-Driven & Scalable
                         </motion.h2>
-                        <motion.p variants={fadeInUp} className="text-xl md:text-3xl text-slate-300 leading-relaxed font-light">
+                        <motion.p variants={slideInLeft} className="text-xl md:text-3xl text-slate-300 leading-relaxed font-light">
                             I am passionate about building intelligent systems. Experienced in working on comprehensive AI/ML projects, I aim to contribute to innovative solutions that make a tangible impact on complex data challenges.
                         </motion.p>
                     </motion.div>
@@ -132,21 +147,22 @@ export default function Portfolio() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
+                            variants={slideInLeft}
                             className="flex items-center gap-4 mb-20"
                         >
                             <h2 className="text-4xl md:text-6xl font-bold text-white">Publications</h2>
                             <div className="flex-grow h-[1px] bg-gradient-to-r from-cyan-500/50 to-transparent ml-4" />
                         </motion.div>
 
-                        <div className="space-y-12">
+                        <motion.div 
+                            className="space-y-12"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={staggerContainer}
+                        >
                             {/* Pub 1 */}
-                            <motion.div 
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                            >
+                            <motion.div variants={slideUp}>
                                 <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
                                         <ImageSequenceViewer folderName="4" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
@@ -166,12 +182,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Pub 2 */}
-                            <motion.div 
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                            >
+                            <motion.div variants={slideUp}>
                                 <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
                                     <div className="w-full md:w-[400px] shrink-0 border-l border-white/10">
                                         <ImageSequenceViewer folderName="5" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
@@ -191,12 +202,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Pub 3 */}
-                            <motion.div 
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                            >
+                            <motion.div variants={slideUp}>
                                 <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
                                         <ImageSequenceViewer folderName="6" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
@@ -214,7 +220,7 @@ export default function Portfolio() {
                                     </div>
                                 </Card>
                             </motion.div>
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
 
@@ -225,7 +231,7 @@ export default function Portfolio() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
+                            variants={slideInRight}
                             className="flex items-center gap-4 mb-20 flex-row-reverse"
                         >
                             <h2 className="text-4xl md:text-6xl font-bold text-white">Projects</h2>
@@ -240,7 +246,7 @@ export default function Portfolio() {
                             className="grid md:grid-cols-3 gap-8"
                         >
                             {/* Project 1 */}
-                            <motion.div variants={fadeInUp} className="h-full">
+                            <motion.div variants={slideUp} className="h-full">
                                 <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="1" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
@@ -260,7 +266,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Project 2 */}
-                            <motion.div variants={fadeInUp} className="h-full">
+                            <motion.div variants={slideUp} className="h-full">
                                 <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="2" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
@@ -280,7 +286,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Project 3 */}
-                            <motion.div variants={fadeInUp} className="h-full">
+                            <motion.div variants={slideUp} className="h-full">
                                 <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="3" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
@@ -312,7 +318,7 @@ export default function Portfolio() {
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
                         >
-                            <motion.div variants={fadeInUp} className="mb-12">
+                            <motion.div variants={slideInLeft} className="mb-12">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Technical Arsenal</h2>
                                 <p className="text-slate-400 text-lg">A deep dive into the frameworks, languages, and tools I use to build scalable AI systems.</p>
                             </motion.div>
@@ -325,7 +331,7 @@ export default function Portfolio() {
                                 ))}
                             </div>
 
-                            <motion.div variants={fadeInUp} className="space-y-6 bg-[#111] p-8 rounded-3xl border border-white/5">
+                            <motion.div variants={slideInRight} className="space-y-6 bg-[#111] p-8 rounded-3xl border border-white/5">
                                 <h3 className="text-2xl font-bold text-white flex items-center gap-3">
                                     <Briefcase className="w-6 h-6 text-cyan-500" /> Professional Experience
                                 </h3>
@@ -354,7 +360,7 @@ export default function Portfolio() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
+                            variants={slideInRight}
                             className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
                         >
                             <ImageSequenceViewer folderName="8" frameCount={40} className="w-full h-full rounded-none" />

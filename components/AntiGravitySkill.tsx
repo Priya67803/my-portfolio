@@ -9,9 +9,11 @@ export default function AntiGravitySkill({ name }: { name: string }) {
     const [rotateX, setRotateX] = useState(0);
     const [rotateY, setRotateY] = useState(0);
 
+    const [delay, setDelay] = useState(0);
+
     useEffect(() => {
-        setRandomY(Math.random() * 15 + 10);
-        setRandomDuration(Math.random() * 2 + 3);
+        setRandomDuration(Math.random() * 2 + 4); // 4 to 6 seconds
+        setDelay(Math.random() * 2); // 0 to 2 seconds delay
         setRotateX(Math.random() * 20 - 10);
         setRotateY(Math.random() * 20 - 10);
     }, []);
@@ -27,12 +29,13 @@ export default function AntiGravitySkill({ name }: { name: string }) {
                 transition: { type: "spring", stiffness: 300, damping: 20 },
             }}
             animate={{
-                y: [0, -randomY, 0],
+                y: [-10, 10, -10],
             }}
             transition={{
                 duration: randomDuration,
                 repeat: Infinity,
                 ease: "easeInOut",
+                delay: delay,
             }}
             style={{ perspective: 1000 }}
         >
