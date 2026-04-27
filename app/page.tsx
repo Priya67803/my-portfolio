@@ -435,6 +435,176 @@ export default function Portfolio() {
                     </div>
                 </section>
 
+                {/* Deep Dive Frameworks (Folder 10) */}
+                <section className="py-32 bg-[#0a0a0a]">
+                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={staggerContainer}
+                        >
+                            <motion.div variants={slideInLeft} className="mb-12">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">"Deep Dive" Frameworks</h2>
+                                <p className="text-slate-400 text-lg">Specialized tools and environments I leverage to deploy robust machine learning models and scalable web applications.</p>
+                            </motion.div>
+                            <div className="flex flex-wrap gap-4">
+                                {["PyTorch", "React", "Next.js", "Docker", "Kubernetes", "Flask", "FastAPI", "TailwindCSS"].map((fw) => (
+                                    <motion.div key={fw} variants={slideUp}>
+                                        <Badge variant="outline" className="text-base px-4 py-2 bg-[#111] text-cyan-400 border-cyan-500/20">{fw}</Badge>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={slideInRight}
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
+                        >
+                            <ImageSequenceViewer folderName="10" frameCount={40} className="w-full h-full rounded-none" />
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Professional (Soft) Skills (Folder 11) */}
+                <section className="py-32">
+                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={slideInLeft}
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.1)] border border-white/10 order-2 lg:order-1"
+                        >
+                            <ImageSequenceViewer folderName="11" frameCount={40} className="w-full h-full rounded-none" />
+                        </motion.div>
+
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={staggerContainer}
+                            className="order-1 lg:order-2"
+                        >
+                            <motion.div variants={slideInRight} className="mb-12">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Professional Skills</h2>
+                                <p className="text-slate-400 text-lg">Beyond code, I bring strong interpersonal and strategic skills to every team I join.</p>
+                            </motion.div>
+                            <div className="space-y-6">
+                                {[
+                                    { title: "Analytical Problem Solving", desc: "Breaking down complex ML problems into actionable components." },
+                                    { title: "Effective Communication", desc: "Articulating technical constraints to non-technical stakeholders." },
+                                    { title: "Agile Adaptability", desc: "Thriving in fast-paced, iterative development environments." },
+                                    { title: "Collaborative Leadership", desc: "Guiding peers and collaborating on best practices." }
+                                ].map((skill, i) => (
+                                    <motion.div key={i} variants={slideInRight} className="bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-colors">
+                                        <h3 className="text-xl font-bold text-purple-400 mb-2">{skill.title}</h3>
+                                        <p className="text-slate-400">{skill.desc}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Spoken Languages (Folder 12) */}
+                <section className="py-32 bg-[#0a0a0a]">
+                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={staggerContainer}
+                        >
+                            <motion.div variants={slideInLeft} className="mb-12">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Spoken Languages</h2>
+                                <p className="text-slate-400 text-lg">Effective global and local communication is key to building impactful solutions.</p>
+                            </motion.div>
+                            <div className="grid grid-cols-2 gap-6">
+                                {[
+                                    { lang: "English", level: "Professional / Fluent" },
+                                    { lang: "Kannada", level: "Native / Bilingual" },
+                                    { lang: "Hindi", level: "Full Professional" },
+                                    { lang: "Telugu", level: "Conversational" }
+                                ].map((l, i) => (
+                                    <motion.div key={i} variants={slideUp} className="bg-[#111] p-6 rounded-2xl border border-white/10 text-center hover:border-blue-500/30 transition-colors">
+                                        <h3 className="text-2xl font-bold text-white mb-2">{l.lang}</h3>
+                                        <p className="text-blue-400 text-sm font-medium">{l.level}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={slideInRight}
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10"
+                        >
+                            <ImageSequenceViewer folderName="12" frameCount={40} className="w-full h-full rounded-none" />
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Contact & Networking (Folder 13) */}
+                <section id="contact" className="py-32">
+                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={slideInLeft}
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10 order-2 lg:order-1"
+                        >
+                            <ImageSequenceViewer folderName="13" frameCount={40} className="w-full h-full rounded-none" />
+                        </motion.div>
+
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={staggerContainer}
+                            className="order-1 lg:order-2"
+                        >
+                            <motion.div variants={slideInRight} className="mb-12">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
+                                <p className="text-slate-400 text-lg">Whether it's a project collaboration, a job opportunity, or just a chat about AI—I'm always open to networking.</p>
+                            </motion.div>
+                            <motion.div variants={slideInRight} className="space-y-6">
+                                <a href="mailto:priya6780@gmail.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-colors group">
+                                    <div className="w-12 h-12 bg-cyan-500/10 rounded-full flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                                        <Mail className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold">Email</h4>
+                                        <p className="text-slate-400 text-sm">priya6780@gmail.com</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors group">
+                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                                        <Linkedin className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold">LinkedIn</h4>
+                                        <p className="text-slate-400 text-sm">Connect with me</p>
+                                    </div>
+                                </a>
+                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-slate-400/50 transition-colors group">
+                                    <div className="w-12 h-12 bg-slate-500/10 rounded-full flex items-center justify-center text-slate-300 group-hover:scale-110 transition-transform">
+                                        <Github className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold">GitHub</h4>
+                                        <p className="text-slate-400 text-sm">Explore my code</p>
+                                    </div>
+                                </a>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </section>
+
                 {/* Footer */}
                 <footer className="py-12 border-t border-white/5 bg-black/80 backdrop-blur-xl relative z-10">
                     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
