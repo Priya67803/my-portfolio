@@ -435,39 +435,6 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                {/* Deep Dive Frameworks (Folder 10) */}
-                <section className="py-32 bg-[#0a0a0a]">
-                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-                        <motion.div 
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={staggerContainer}
-                        >
-                            <motion.div variants={slideInLeft} className="mb-12">
-                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">"Deep Dive" Frameworks</h2>
-                                <p className="text-slate-400 text-lg">Specialized tools and environments I leverage to deploy robust machine learning models and scalable web applications.</p>
-                            </motion.div>
-                            <div className="flex flex-wrap gap-4">
-                                {["PyTorch", "React", "Next.js", "Docker", "Kubernetes", "Flask", "FastAPI", "TailwindCSS"].map((fw) => (
-                                    <motion.div key={fw} variants={slideUp}>
-                                        <Badge variant="outline" className="text-base px-4 py-2 bg-[#111] text-cyan-400 border-cyan-500/20">{fw}</Badge>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                        <motion.div 
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={slideInRight}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
-                        >
-                            <ImageSequenceViewer folderName="10" frameCount={40} className="w-full h-full rounded-none" />
-                        </motion.div>
-                    </div>
-                </section>
-
                 {/* Professional (Soft) Skills (Folder 11) */}
                 <section className="py-32">
                     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -505,45 +472,6 @@ export default function Portfolio() {
                                     </motion.div>
                                 ))}
                             </div>
-                        </motion.div>
-                    </div>
-                </section>
-
-                {/* Spoken Languages (Folder 12) */}
-                <section className="py-32 bg-[#0a0a0a]">
-                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-                        <motion.div 
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={staggerContainer}
-                        >
-                            <motion.div variants={slideInLeft} className="mb-12">
-                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Spoken Languages</h2>
-                                <p className="text-slate-400 text-lg">Effective global and local communication is key to building impactful solutions.</p>
-                            </motion.div>
-                            <div className="grid grid-cols-2 gap-6">
-                                {[
-                                    { lang: "English", level: "Professional / Fluent" },
-                                    { lang: "Kannada", level: "Native / Bilingual" },
-                                    { lang: "Hindi", level: "Full Professional" },
-                                    { lang: "Telugu", level: "Conversational" }
-                                ].map((l, i) => (
-                                    <motion.div key={i} variants={slideUp} className="bg-[#111] p-6 rounded-2xl border border-white/10 text-center hover:border-blue-500/30 transition-colors">
-                                        <h3 className="text-2xl font-bold text-white mb-2">{l.lang}</h3>
-                                        <p className="text-blue-400 text-sm font-medium">{l.level}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                        <motion.div 
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={slideInRight}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10"
-                        >
-                            <ImageSequenceViewer folderName="12" frameCount={40} className="w-full h-full rounded-none" />
                         </motion.div>
                     </div>
                 </section>
