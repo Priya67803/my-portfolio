@@ -379,7 +379,7 @@ export default function Portfolio() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
+                            variants={slideInLeft}
                             className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10 order-2 lg:order-1"
                         >
                             <ImageSequenceViewer folderName="7" frameCount={40} className="w-full h-full rounded-none" />
@@ -392,26 +392,26 @@ export default function Portfolio() {
                             variants={staggerContainer}
                             className="order-1 lg:order-2"
                         >
-                            <motion.div variants={fadeInUp} className="mb-12">
+                            <motion.div variants={slideInRight} className="mb-12">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Education & Credentials</h2>
                                 <p className="text-slate-400 text-lg">Academic background and continuous learning certifications.</p>
                             </motion.div>
 
                             <div className="space-y-8 mb-12">
-                                <motion.div variants={fadeInUp} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-500 before:rounded-full before:shadow-[0_0_15px_rgba(6,182,212,0.8)] after:absolute after:left-[7px] after:top-6 after:bottom-[-2rem] after:w-[2px] after:bg-white/10">
+                                <motion.div variants={slideInRight} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-500 before:rounded-full before:shadow-[0_0_15px_rgba(6,182,212,0.8)] after:absolute after:left-[7px] after:top-6 after:bottom-[-2rem] after:w-[2px] after:bg-white/10">
                                     <h3 className="text-2xl font-bold text-white mb-2">B.E. Computer Science (AI & ML)</h3>
                                     <p className="text-cyan-400 font-medium mb-2">M. S. Ramaiah Institute of Technology</p>
                                     <p className="text-slate-500 text-sm">6th Semester (2024–2027)</p>
                                 </motion.div>
 
-                                <motion.div variants={fadeInUp} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-slate-600 before:rounded-full">
+                                <motion.div variants={slideInRight} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-slate-600 before:rounded-full">
                                     <h3 className="text-xl font-bold text-white mb-2">Diploma in Computer Science</h3>
                                     <p className="text-slate-400 font-medium mb-2">MEI Polytechnic, Bengaluru</p>
                                     <p className="text-slate-500 text-sm">2021–2024</p>
                                 </motion.div>
                             </div>
 
-                            <motion.div variants={fadeInUp}>
+                            <motion.div variants={slideInRight}>
                                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                                     <Award className="w-6 h-6 text-blue-500" /> Top Certifications
                                 </h3>
