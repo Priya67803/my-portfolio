@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import AntiGravitySkill from "@/components/AntiGravitySkill";
 import ImageSequenceViewer from "@/components/ImageSequenceViewer";
-import { Github, Linkedin, Mail, Download, ArrowRight, Briefcase, Award, CheckCircle2 } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ArrowRight, Briefcase, Award, CheckCircle2, BrainCircuit, MessageSquare, Zap, Users, Send } from "lucide-react";
 
 export default function Portfolio() {
     // Animation variants
@@ -44,25 +44,25 @@ export default function Portfolio() {
     ];
 
     return (
-        <main className="min-h-screen bg-[#050505] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0d0514] text-slate-200 font-sans selection:bg-[#e0a96d]/30 overflow-x-hidden">
             {/* Ambient Background */}
             <div className="fixed inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cyan-900/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-blue-900/10 rounded-full blur-[150px]" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#4a2636]/20 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-[#3b1f14]/20 rounded-full blur-[150px]" />
             </div>
 
             {/* Navigation */}
-            <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-md">
+            <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0d0514]/80 backdrop-blur-md">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     <span className="text-2xl font-bold text-white tracking-tighter">
-                        Priya<span className="text-cyan-500">.ai</span>
+                        Priya<span className="text-[#e0a96d]">.ai</span>
                     </span>
                     <div className="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                        <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
-                        <a href="#publications" className="hover:text-cyan-400 transition-colors">Publications</a>
-                        <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-                        <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
-                        <a href="#education" className="hover:text-cyan-400 transition-colors">Education</a>
+                        <a href="#about" className="hover:text-[#f3c6a5] transition-colors">About</a>
+                        <a href="#publications" className="hover:text-[#f3c6a5] transition-colors">Publications</a>
+                        <a href="#projects" className="hover:text-[#f3c6a5] transition-colors">Projects</a>
+                        <a href="#skills" className="hover:text-[#f3c6a5] transition-colors">Skills</a>
+                        <a href="#education" className="hover:text-[#f3c6a5] transition-colors">Education</a>
                     </div>
                 </div>
             </nav>
@@ -78,7 +78,7 @@ export default function Portfolio() {
                     >
                         <motion.div variants={staggerContainer}>
                             <motion.div variants={fadeInUp}>
-                                <Badge className="mb-6 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-4 py-1.5 text-sm backdrop-blur-md">
+                                <Badge className="mb-6 bg-[#e0a96d]/10 text-[#f3c6a5] border border-[#e0a96d]/20 px-4 py-1.5 text-sm backdrop-blur-md">
                                     Available for Internships
                                 </Badge>
                             </motion.div>
@@ -86,7 +86,7 @@ export default function Portfolio() {
                             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6 drop-shadow-2xl">
                                 Priyadarshini V<br />
                                 <motion.span 
-                                    className="block mt-2 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:200%_auto]"
+                                    className="block mt-2 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#f3c6a5] via-[#e0a96d] to-[#cb6d51] bg-[length:200%_auto]"
                                     animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                                     transition={{ duration: 5, ease: "linear", repeat: Infinity }}
                                 >
@@ -99,21 +99,21 @@ export default function Portfolio() {
                             </motion.p>
 
                             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mt-10">
-                                <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-500 text-white border-0 shadow-[0_0_20px_rgba(8,145,178,0.3)] px-8 h-14 text-base rounded-full transition-transform hover:scale-105 duration-300">
-                                    <a href="#publications">
-                                        Explore Work <ArrowRight className="ml-2 h-5 w-5" />
+                                <Button asChild size="lg" className="bg-[#e0a96d] hover:bg-[#f3c6a5] text-black text-white border-0 shadow-[0_0_20px_rgba(224,169,109,0.3)] px-8 h-14 text-base rounded-full transition-transform hover:scale-105 duration-300">
+                                    <a href="#projects">
+                                        View Projects <ArrowRight className="ml-2 h-5 w-5" />
                                     </a>
                                 </Button>
-                                <Button variant="outline" size="lg" asChild className="border-white/10 hover:bg-white/5 bg-[#111] text-white h-14 px-8 text-base rounded-full transition-transform hover:scale-105 duration-300">
+                                <Button variant="outline" size="lg" asChild className="border-white/10 hover:bg-white/5 bg-[#1d0d2b] text-white h-14 px-8 text-base rounded-full transition-transform hover:scale-105 duration-300">
                                     <a href="/resume.pdf">
-                                        Download Resume <Download className="ml-2 h-5 w-5" />
+                                        Download CV <Download className="ml-2 h-5 w-5" />
                                     </a>
                                 </Button>
                             </motion.div>
                         </motion.div>
 
                         {/* Profile Image Sequence */}
-                        <motion.div variants={fadeInUp} className="relative w-full aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.15)] border border-white/10 bg-black">
+                        <motion.div variants={fadeInUp} className="relative w-full aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(224,169,109,0.15)] border border-white/10 bg-black">
                             <ImageSequenceViewer folderName="9" frameCount={40} className="w-full h-full rounded-none" />
                         </motion.div>
                     </motion.div>
@@ -129,7 +129,7 @@ export default function Portfolio() {
                         variants={staggerContainer}
                     >
                         <motion.div variants={slideInLeft} className="inline-block mb-6">
-                            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto" />
+                            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#e0a96d] to-transparent mx-auto" />
                         </motion.div>
                         <motion.h2 variants={slideInRight} className="text-4xl md:text-5xl font-bold text-white mb-10">
                             Research-Driven & Scalable
@@ -141,7 +141,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* Publications & Conferences (Moved to top as requested) */}
-                <section id="publications" className="py-32 bg-[#0a0a0a]">
+                <section id="publications" className="py-32 bg-[#150824]">
                     <div className="max-w-7xl mx-auto px-6">
                         <motion.div 
                             initial="hidden"
@@ -151,7 +151,7 @@ export default function Portfolio() {
                             className="flex items-center gap-4 mb-20"
                         >
                             <h2 className="text-4xl md:text-6xl font-bold text-white">Publications</h2>
-                            <div className="flex-grow h-[1px] bg-gradient-to-r from-cyan-500/50 to-transparent ml-4" />
+                            <div className="flex-grow h-[1px] bg-gradient-to-r from-[#e0a96d]/50 to-transparent ml-4" />
                         </motion.div>
 
                         <motion.div 
@@ -163,15 +163,15 @@ export default function Portfolio() {
                         >
                             {/* Pub 1 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col md:flex-row">
+                                <Card className="bg-[#1d0d2b] border-white/10 overflow-hidden group hover:border-[#e0a96d]/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
                                         <ImageSequenceViewer folderName="4" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center">
-                                        <Badge variant="outline" className="w-fit mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 text-sm px-3 py-1">
+                                        <Badge variant="outline" className="w-fit mb-6 bg-[#cb6d51]/10 text-[#e58a6d] border-[#cb6d51]/20 text-sm px-3 py-1">
                                             ICEFEET 2026 — Under Review
                                         </Badge>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-[#f3c6a5] transition-colors">
                                             Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis
                                         </h3>
                                         <p className="text-slate-400 text-lg leading-relaxed">
@@ -183,15 +183,15 @@ export default function Portfolio() {
 
                             {/* Pub 2 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
+                                <Card className="bg-[#1d0d2b] border-white/10 overflow-hidden group hover:border-[#cb6d51]/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
                                     <div className="w-full md:w-[400px] shrink-0 border-l border-white/10">
                                         <ImageSequenceViewer folderName="5" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center">
-                                        <Badge variant="outline" className="w-fit mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 text-sm px-3 py-1">
+                                        <Badge variant="outline" className="w-fit mb-6 bg-[#cb6d51]/10 text-[#e58a6d] border-[#cb6d51]/20 text-sm px-3 py-1">
                                             ICDSNE 2026 — Under Review
                                         </Badge>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-[#e58a6d] transition-colors">
                                             Scalable Fault Detection in Aircraft Engines via Sequence Modeling and Attention-Based Autoencoding
                                         </h3>
                                         <p className="text-slate-400 text-lg leading-relaxed">
@@ -203,15 +203,15 @@ export default function Portfolio() {
 
                             {/* Pub 3 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col md:flex-row">
+                                <Card className="bg-[#1d0d2b] border-white/10 overflow-hidden group hover:border-[#cfa075]/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
                                         <ImageSequenceViewer folderName="6" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center">
-                                        <Badge variant="outline" className="w-fit mb-6 bg-purple-500/10 text-purple-400 border-purple-500/20 text-sm px-3 py-1">
+                                        <Badge variant="outline" className="w-fit mb-6 bg-[#cfa075]/10 text-[#e8bc96] border-[#cfa075]/20 text-sm px-3 py-1">
                                             ICDSNE 2026 — Under Review
                                         </Badge>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-[#e8bc96] transition-colors">
                                             Real-Time Detection of Online Grooming Behaviors Using YOLOv8 for Risk Assessment
                                         </h3>
                                         <p className="text-slate-400 text-lg leading-relaxed">
@@ -235,7 +235,7 @@ export default function Portfolio() {
                             className="flex items-center gap-4 mb-20 flex-row-reverse"
                         >
                             <h2 className="text-4xl md:text-6xl font-bold text-white">Projects</h2>
-                            <div className="flex-grow h-[1px] bg-gradient-to-l from-blue-500/50 to-transparent mr-4" />
+                            <div className="flex-grow h-[1px] bg-gradient-to-l from-[#cb6d51]/50 to-transparent mr-4" />
                         </motion.div>
 
                         <motion.div 
@@ -247,10 +247,10 @@ export default function Portfolio() {
                         >
                             {/* Project 1 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
+                                <Card className="bg-[#150824] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(224,169,109,0.15)] hover:border-[#e0a96d]/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="1" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
-                                        <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
+                                        <CardTitle className="text-2xl text-white group-hover:text-[#f3c6a5] transition-colors">Tourist Recommendation System</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
                                             Developed a real-time recommendation system using Decision Tree algorithm, integrating weather APIs, user preferences, and travel conditions.
                                         </CardDescription>
@@ -267,10 +267,10 @@ export default function Portfolio() {
 
                             {/* Project 2 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
+                                <Card className="bg-[#150824] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(203,109,81,0.15)] hover:border-[#cb6d51]/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="2" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
-                                        <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
+                                        <CardTitle className="text-2xl text-white group-hover:text-[#e58a6d] transition-colors">NLP Language & Bias Detection</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
                                             Built an NLP dashboard using FastText, VADER, and TextStat for real-time language detection, sentiment analysis, and readability scoring.
                                         </CardDescription>
@@ -287,10 +287,10 @@ export default function Portfolio() {
 
                             {/* Project 3 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
+                                <Card className="bg-[#150824] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(207,160,117,0.15)] hover:border-[#cfa075]/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="3" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
-                                        <CardTitle className="text-2xl text-white group-hover:text-purple-400 transition-colors">Smart Interview Agent</CardTitle>
+                                        <CardTitle className="text-2xl text-white group-hover:text-[#e8bc96] transition-colors">Smart Interview Agent</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
                                             Implemented an end-to-end pipeline for dynamic question generation, answer analysis, and performance tracking using Generative AI.
                                         </CardDescription>
@@ -309,7 +309,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* Experience & Skills (Technical Arsenal) */}
-                <section id="skills" className="py-32 bg-[#0a0a0a]">
+                <section id="skills" className="py-32 bg-[#150824]">
                     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                         
                         <motion.div 
@@ -331,23 +331,23 @@ export default function Portfolio() {
                                 ))}
                             </div>
 
-                            <motion.div variants={slideInRight} className="space-y-6 bg-[#111] p-8 rounded-3xl border border-white/5">
+                            <motion.div variants={slideInRight} className="space-y-6 bg-[#1d0d2b] p-8 rounded-3xl border border-white/5">
                                 <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                                    <Briefcase className="w-6 h-6 text-cyan-500" /> Professional Experience
+                                    <Briefcase className="w-6 h-6 text-[#e0a96d]" /> Professional Experience
                                 </h3>
                                 <div className="pt-4 border-t border-white/10">
                                     <div className="flex justify-between items-start mb-2">
                                         <h4 className="text-xl text-white font-medium">Internship Trainee</h4>
-                                        <span className="text-cyan-400 text-sm font-medium bg-cyan-500/10 px-3 py-1 rounded-full">Jan 2024 - Apr 2024</span>
+                                        <span className="text-[#f3c6a5] text-sm font-medium bg-[#e0a96d]/10 px-3 py-1 rounded-full">Jan 2024 - Apr 2024</span>
                                     </div>
                                     <p className="text-slate-400 mb-4">Razz Security, Bengaluru</p>
                                     <ul className="space-y-3">
                                         <li className="flex items-start text-slate-300 text-sm">
-                                            <CheckCircle2 className="w-4 h-4 text-cyan-500 mr-2 mt-1 shrink-0" />
+                                            <CheckCircle2 className="w-4 h-4 text-[#e0a96d] mr-2 mt-1 shrink-0" />
                                             <span>Vulnerability Assessment & Penetration Testing (VAPT) on web apps.</span>
                                         </li>
                                         <li className="flex items-start text-slate-300 text-sm">
-                                            <CheckCircle2 className="w-4 h-4 text-cyan-500 mr-2 mt-1 shrink-0" />
+                                            <CheckCircle2 className="w-4 h-4 text-[#e0a96d] mr-2 mt-1 shrink-0" />
                                             <span>Mitigated OWASP Top 10 vulnerabilities (SQLi, XSS).</span>
                                         </li>
                                     </ul>
@@ -361,7 +361,7 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInRight}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(224,169,109,0.1)] border border-white/10"
                         >
                             <ImageSequenceViewer folderName="8" frameCount={40} className="w-full h-full rounded-none" />
                             <div className="absolute inset-0 border-[1px] border-white/10 rounded-3xl pointer-events-none" />
@@ -380,7 +380,7 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInLeft}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10 order-2 lg:order-1"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(203,109,81,0.1)] border border-white/10 order-2 lg:order-1"
                         >
                             <ImageSequenceViewer folderName="7" frameCount={40} className="w-full h-full rounded-none" />
                         </motion.div>
@@ -398,9 +398,9 @@ export default function Portfolio() {
                             </motion.div>
 
                             <div className="space-y-8 mb-12">
-                                <motion.div variants={slideInRight} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-500 before:rounded-full before:shadow-[0_0_15px_rgba(6,182,212,0.8)] after:absolute after:left-[7px] after:top-6 after:bottom-[-2rem] after:w-[2px] after:bg-white/10">
+                                <motion.div variants={slideInRight} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-[#e0a96d] before:rounded-full before:shadow-[0_0_15px_rgba(224,169,109,0.8)] after:absolute after:left-[7px] after:top-6 after:bottom-[-2rem] after:w-[2px] after:bg-white/10">
                                     <h3 className="text-2xl font-bold text-white mb-2">B.E. Computer Science (AI & ML)</h3>
-                                    <p className="text-cyan-400 font-medium mb-2">M. S. Ramaiah Institute of Technology</p>
+                                    <p className="text-[#f3c6a5] font-medium mb-2">M. S. Ramaiah Institute of Technology</p>
                                     <p className="text-slate-500 text-sm">6th Semester (2024–2027)</p>
                                 </motion.div>
 
@@ -413,7 +413,7 @@ export default function Portfolio() {
 
                             <motion.div variants={slideInRight}>
                                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <Award className="w-6 h-6 text-blue-500" /> Top Certifications
+                                    <Award className="w-6 h-6 text-[#cb6d51]" /> Top Certifications
                                 </h3>
                                 <ul className="grid sm:grid-cols-2 gap-4">
                                     {[
@@ -443,7 +443,7 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInLeft}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.1)] border border-white/10 order-2 lg:order-1"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(207,160,117,0.1)] border border-white/10 order-2 lg:order-1"
                         >
                             <ImageSequenceViewer folderName="11" frameCount={40} className="w-full h-full rounded-none" />
                         </motion.div>
@@ -461,16 +461,23 @@ export default function Portfolio() {
                             </motion.div>
                             <div className="space-y-6">
                                 {[
-                                    { title: "Analytical Problem Solving", desc: "Breaking down complex ML problems into actionable components." },
-                                    { title: "Effective Communication", desc: "Articulating technical constraints to non-technical stakeholders." },
-                                    { title: "Agile Adaptability", desc: "Thriving in fast-paced, iterative development environments." },
-                                    { title: "Collaborative Leadership", desc: "Guiding peers and collaborating on best practices." }
-                                ].map((skill, i) => (
-                                    <motion.div key={i} variants={slideInRight} className="bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-colors">
-                                        <h3 className="text-xl font-bold text-purple-400 mb-2">{skill.title}</h3>
-                                        <p className="text-slate-400">{skill.desc}</p>
+                                    { title: "Analytical Problem Solving", desc: "Breaking down complex ML problems into actionable components.", icon: BrainCircuit },
+                                    { title: "Effective Communication", desc: "Articulating technical constraints to non-technical stakeholders.", icon: MessageSquare },
+                                    { title: "Agile Adaptability", desc: "Thriving in fast-paced, iterative development environments.", icon: Zap },
+                                    { title: "Collaborative Leadership", desc: "Guiding peers and collaborating on best practices.", icon: Users }
+                                ].map((skill, i) => {
+                                    const Icon = skill.icon;
+                                    return (
+                                    <motion.div key={i} variants={slideInRight} className="bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-[#cfa075]/30 transition-colors flex gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-[#b87333]/10 flex items-center justify-center shrink-0">
+                                            <Icon className="w-6 h-6 text-[#b87333]" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-[#cfa075] mb-2">{skill.title}</h3>
+                                            <p className="text-slate-300">{skill.desc}</p>
+                                        </div>
                                     </motion.div>
-                                ))}
+                                )})}
                             </div>
                         </motion.div>
                     </div>
@@ -484,7 +491,7 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInLeft}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10 order-2 lg:order-1"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(224,169,109,0.1)] border border-white/10 order-2 lg:order-1"
                         >
                             <ImageSequenceViewer folderName="13" frameCount={40} className="w-full h-full rounded-none" />
                         </motion.div>
@@ -501,33 +508,14 @@ export default function Portfolio() {
                                 <p className="text-slate-400 text-lg">Whether it's a project collaboration, a job opportunity, or just a chat about AI—I'm always open to networking.</p>
                             </motion.div>
                             <motion.div variants={slideInRight} className="space-y-6">
-                                <a href="mailto:priya6780@gmail.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-colors group">
-                                    <div className="w-12 h-12 bg-cyan-500/10 rounded-full flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                                        <Mail className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold">Email</h4>
-                                        <p className="text-slate-400 text-sm">priya6780@gmail.com</p>
-                                    </div>
-                                </a>
-                                <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors group">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                                        <Linkedin className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold">LinkedIn</h4>
-                                        <p className="text-slate-400 text-sm">Connect with me</p>
-                                    </div>
-                                </a>
-                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-slate-400/50 transition-colors group">
-                                    <div className="w-12 h-12 bg-slate-500/10 rounded-full flex items-center justify-center text-slate-300 group-hover:scale-110 transition-transform">
-                                        <Github className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold">GitHub</h4>
-                                        <p className="text-slate-400 text-sm">Explore my code</p>
-                                    </div>
-                                </a>
+                                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                    <input type="text" placeholder="Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#e0a96d] focus:ring-1 focus:ring-[#e0a96d] transition-colors" />
+                                    <input type="email" placeholder="Email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#e0a96d] focus:ring-1 focus:ring-[#e0a96d] transition-colors" />
+                                    <textarea placeholder="Message" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#e0a96d] focus:ring-1 focus:ring-[#e0a96d] transition-colors resize-none"></textarea>
+                                    <Button className="w-full bg-[#e0a96d] hover:bg-[#f3c6a5] text-black font-bold h-14 rounded-xl transition-all hover:shadow-[0_0_20px_rgba(224,169,109,0.4)]">
+                                        Send Message <Send className="ml-2 w-5 h-5" />
+                                    </Button>
+                                </form>
                             </motion.div>
                         </motion.div>
                     </div>
@@ -538,13 +526,13 @@ export default function Portfolio() {
                     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
                         <p className="text-slate-500 font-medium text-sm">© 2026 Priyadarshini V. All rights reserved.</p>
                         <div className="flex gap-6">
-                            <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
+                            <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-[#e0a96d]/20 hover:text-[#f3c6a5] hover:scale-110 transition-all duration-300 group">
                                 <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                             </a>
-                            <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
+                            <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-[#e0a96d]/20 hover:text-[#f3c6a5] hover:scale-110 transition-all duration-300 group">
                                 <Linkedin className="w-5 h-5 group-hover:-rotate-12 transition-transform" />
                             </a>
-                            <a href="mailto:priya6780@gmail.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
+                            <a href="mailto:priya6780@gmail.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-[#e0a96d]/20 hover:text-[#f3c6a5] hover:scale-110 transition-all duration-300 group">
                                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             </a>
                         </div>
