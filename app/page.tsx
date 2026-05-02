@@ -114,15 +114,22 @@ export default function Portfolio() {
                         </motion.div>
 
                         <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2">
-                            <div className="relative w-full max-w-[300px] md:max-w-[500px] aspect-square animate-float">
-                                <div className="absolute inset-0 bg-cyan-500/20 rounded-full blur-[80px] animate-pulse" />
-                                <img 
-                                    src="/brain.png" 
-                                    alt="3D Neural Network Brain" 
-                                    className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(0,209,255,0.3)]"
+                            <div className="relative w-full max-w-[300px] md:max-w-[500px] aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass">
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
+                                <video 
+                                    src="/Profile.mp4" 
+                                    autoPlay 
+                                    muted 
+                                    loop 
+                                    playsInline
+                                    className="w-full h-full object-cover"
                                 />
+                                <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none z-20" />
                             </div>
+                            {/* Decorative Glow */}
+                            <div className="absolute -z-10 w-[120%] h-[120%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
                         </motion.div>
+
                     </motion.div>
                 </section>
 
