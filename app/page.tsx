@@ -621,32 +621,71 @@ export default function Portfolio() {
                             </div>
                         </motion.div>
                     </div>
-                </section>
 
-                {/* Footer */}
-                <footer className="py-12 border-t border-white/5 bg-black/80 backdrop-blur-xl relative z-10">
-                    <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-                        <div className="flex flex-col items-center md:items-start gap-2">
-                            <p className="text-slate-500 font-medium text-sm">© 2026 Priyadarshini V. All rights reserved.</p>
-                            <Button variant="link" asChild className="text-cyan-500 p-0 h-auto text-xs font-bold hover:text-cyan-400">
-                                <a href="/resume.pdf">Download Resume/CV <Download className="ml-1 w-3 h-3" /></a>
-                            </Button>
+                    {/* Integrated Footer */}
+                    <footer className="mt-24 pt-20 pb-10 border-t border-white/5 bg-black/40 backdrop-blur-xl w-full">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                                {/* Brand Column */}
+                                <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+                                    <span className="text-2xl font-bold text-white tracking-tighter mb-4">
+                                        Priya<span className="text-cyan-500">.ai</span>
+                                    </span>
+                                    <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
+                                        Architecting the next generation of intelligent systems through research-driven AI and scalable deep learning architectures.
+                                    </p>
+                                </div>
+
+                                {/* Quick Links */}
+                                <div className="flex flex-col items-center md:items-start">
+                                    <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h4>
+                                    <ul className="space-y-4 text-slate-400 text-sm">
+                                        <li><a href="#home" className="hover:text-cyan-400 transition-colors">Home</a></li>
+                                        <li><a href="#about" className="hover:text-cyan-400 transition-colors">About</a></li>
+                                        <li><a href="#publications" className="hover:text-cyan-400 transition-colors">Publications</a></li>
+                                        <li><a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a></li>
+                                        <li><a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a></li>
+                                    </ul>
+                                </div>
+
+                                {/* Socials/Connect */}
+                                <div className="flex flex-col items-center md:items-start">
+                                    <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Connect</h4>
+                                    <div className="flex gap-4">
+                                        <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-all">
+                                            <Github className="w-5 h-5" />
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-blue-500/20 hover:text-blue-400 transition-all">
+                                            <Linkedin className="w-5 h-5" />
+                                        </a>
+                                        <a href="mailto:priya6780@gmail.com" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-all">
+                                            <Mail className="w-5 h-5" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Resume CTA */}
+                                <div className="flex flex-col items-center md:items-start">
+                                    <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Credentials</h4>
+                                    <Button variant="outline" asChild className="border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold px-6 h-12 rounded-xl transition-all">
+                                        <a href="/resume.pdf">Download Full CV <Download className="ml-2 w-4 h-4" /></a>
+                                    </Button>
+                                </div>
+                            </div>
+
+                            <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                                <p className="text-slate-600 text-xs font-medium uppercase tracking-widest">
+                                    Built with Next.js and Framer Motion
+                                </p>
+                                <p className="text-slate-500 text-xs font-medium">
+                                    © 2026 Priyadarshini V. All rights reserved.
+                                </p>
+                            </div>
                         </div>
-                        <div className="flex gap-6">
-                            <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
-                                <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
-                                <Linkedin className="w-5 h-5 group-hover:-rotate-12 transition-transform" />
-                            </a>
-                            <a href="mailto:priya6780@gmail.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
-                                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                            </a>
-                        </div>
-                    </div>
-                </footer>
+                    </footer>
+                </section>
             </div>
         </main>
     </div>
 );
-}
+}
