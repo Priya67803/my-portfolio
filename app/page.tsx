@@ -290,21 +290,21 @@ export default function Portfolio() {
 
                             {/* Pub 3 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col lg:flex-row min-h-[400px]">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col lg:flex-row min-h-[400px]">
                                     <div className="w-full lg:w-[45%] shrink-0 border-r border-white/10 relative overflow-hidden">
                                         <video src="/6.mp4" autoPlay muted loop playsInline className="w-full h-64 lg:h-full object-cover" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
-                                        <Badge variant="outline" className="w-fit mb-6 bg-purple-500/10 text-purple-400 border-purple-500/20 text-sm px-3 py-1">
+                                        <Badge variant="outline" className="w-fit mb-6 bg-cyan-500/10 text-cyan-400 border-cyan-500/20 text-sm px-3 py-1">
                                             ICDSNE 2026 — Under Review
                                         </Badge>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors">
                                             Real-Time Detection of Online Grooming Behaviors Using YOLOv8 for Risk Assessment
                                         </h3>
                                         <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                             Leveraging state-of-the-art computer vision models like YOLOv8 to identify and assess risks associated with online grooming in real-time environments.
                                         </p>
-                                        <Button variant="outline" className="w-fit border-purple-500/30 hover:bg-purple-500/10 text-purple-400 font-bold gap-2">
+                                        <Button variant="outline" className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2">
                                             Request Abstract <Mail className="w-4 h-4" />
                                         </Button>
                                     </div>
@@ -391,12 +391,12 @@ export default function Portfolio() {
 
                             {/* Project 3 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
                                     <div className="relative h-64 shrink-0">
                                         <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
-                                        <CardTitle className="text-2xl text-white group-hover:text-purple-400 transition-colors">Smart Interview Agent</CardTitle>
+                                        <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Smart Interview Agent</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
                                             Implemented an end-to-end pipeline for dynamic question generation, answer analysis, and performance tracking using Generative AI.
                                         </CardDescription>
@@ -555,12 +555,12 @@ export default function Portfolio() {
                                 ].map((skill, i) => {
                                     const Icon = skill.icon;
                                     return (
-                                    <motion.div key={i} variants={slideInRight} className="bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-colors flex gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0">
-                                            <Icon className="w-6 h-6 text-purple-500" />
+                                    <motion.div key={i} variants={slideInRight} className="bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-colors flex gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center shrink-0">
+                                            <Icon className="w-6 h-6 text-cyan-500" />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-purple-500 mb-2">{skill.title}</h3>
+                                            <h3 className="text-xl font-bold text-cyan-500 mb-2">{skill.title}</h3>
                                             <p className="text-slate-300">{skill.desc}</p>
                                         </div>
                                     </motion.div>
