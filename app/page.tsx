@@ -91,6 +91,16 @@ export default function Portfolio() {
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 transition-all group-hover:w-full"></span>
                         </a>
                     </div>
+                    
+                    <div className="hidden md:flex items-center gap-4 ml-6 pl-6 border-l border-white/10">
+                        <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                            <Github className="w-5 h-5" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                            <Linkedin className="w-5 h-5" />
+                        </a>
+                    </div>
+
                     <Button 
                         variant="outline" 
                         size="sm" 
@@ -245,9 +255,12 @@ export default function Portfolio() {
                                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors">
                                             Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis
                                         </h3>
-                                        <p className="text-slate-400 text-lg leading-relaxed">
+                                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                             A novel architectural approach utilizing hybrid intelligence to accurately and efficiently diagnose pulmonary hypertension from complex medical datasets.
                                         </p>
+                                        <Button variant="outline" className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2">
+                                            Request Abstract <Mail className="w-4 h-4" />
+                                        </Button>
                                     </div>
                                 </Card>
                             </motion.div>
@@ -265,9 +278,12 @@ export default function Portfolio() {
                                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
                                             Scalable Fault Detection in Aircraft Engines via Sequence Modeling and Attention-Based Autoencoding
                                         </h3>
-                                        <p className="text-slate-400 text-lg leading-relaxed">
+                                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                             Advanced deep learning framework analyzing time-series sensor data to predict remaining useful life and classify engine faults before they occur.
                                         </p>
+                                        <Button variant="outline" className="w-fit border-blue-500/30 hover:bg-blue-500/10 text-blue-400 font-bold gap-2">
+                                            Request Abstract <Mail className="w-4 h-4" />
+                                        </Button>
                                     </div>
                                 </Card>
                             </motion.div>
@@ -285,9 +301,12 @@ export default function Portfolio() {
                                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors">
                                             Real-Time Detection of Online Grooming Behaviors Using YOLOv8 for Risk Assessment
                                         </h3>
-                                        <p className="text-slate-400 text-lg leading-relaxed">
+                                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                             Leveraging state-of-the-art computer vision models like YOLOv8 to identify and assess risks associated with online grooming in real-time environments.
                                         </p>
+                                        <Button variant="outline" className="w-fit border-purple-500/30 hover:bg-purple-500/10 text-purple-400 font-bold gap-2">
+                                            Request Abstract <Mail className="w-4 h-4" />
+                                        </Button>
                                     </div>
                                 </Card>
                             </motion.div>
@@ -318,15 +337,23 @@ export default function Portfolio() {
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
-                                            Developed a real-time recommendation system using Decision Tree algorithm, integrating weather APIs, user preferences, and travel conditions.
+                                        <CardDescription className="text-slate-400 mt-4 text-base">
+                                            Developed a real-time recommendation system achieving <span className="text-cyan-400 font-bold">94% accuracy</span> in user-preference matching using custom decision tree heuristics.
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="pb-8 mt-auto">
+                                    <CardContent className="pb-8 mt-auto flex flex-col gap-6">
                                         <div className="flex flex-wrap gap-2">
                                             {["Flask", "JavaScript", "Decision Tree", "OpenStreetMap API"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
                                             ))}
+                                        </div>
+                                        <div className="flex gap-4">
+                                            <Button variant="outline" size="sm" className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
+                                                <Github className="w-4 h-4" /> Code
+                                            </Button>
+                                            <Button size="sm" className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
+                                                <ArrowRight className="w-4 h-4" /> Demo
+                                            </Button>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -340,15 +367,23 @@ export default function Portfolio() {
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
-                                            Built an NLP dashboard using FastText, VADER, and TextStat for real-time language detection, sentiment analysis, and readability scoring.
+                                        <CardDescription className="text-slate-400 mt-4 text-base">
+                                            Built a high-performance NLP dashboard that <span className="text-blue-400 font-bold">reduced latency by 20%</span> while detecting nuanced linguistic biases in real-time.
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="pb-8 mt-auto">
+                                    <CardContent className="pb-8 mt-auto flex flex-col gap-6">
                                         <div className="flex flex-wrap gap-2">
                                             {["FastText", "VADER", "TextStat", "NLP"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
                                             ))}
+                                        </div>
+                                        <div className="flex gap-4">
+                                            <Button variant="outline" size="sm" className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
+                                                <Github className="w-4 h-4" /> Code
+                                            </Button>
+                                            <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-500 text-white gap-2">
+                                                <ArrowRight className="w-4 h-4" /> Demo
+                                            </Button>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -590,8 +625,13 @@ export default function Portfolio() {
 
                 {/* Footer */}
                 <footer className="py-12 border-t border-white/5 bg-black/80 backdrop-blur-xl relative z-10">
-                    <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                        <p className="text-slate-500 font-medium text-sm">© 2026 Priyadarshini V. All rights reserved.</p>
+                    <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+                        <div className="flex flex-col items-center md:items-start gap-2">
+                            <p className="text-slate-500 font-medium text-sm">© 2026 Priyadarshini V. All rights reserved.</p>
+                            <Button variant="link" asChild className="text-cyan-500 p-0 h-auto text-xs font-bold hover:text-cyan-400">
+                                <a href="/resume.pdf">Download Resume/CV <Download className="ml-1 w-3 h-3" /></a>
+                            </Button>
+                        </div>
                         <div className="flex gap-6">
                             <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
                                 <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
