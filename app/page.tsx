@@ -44,7 +44,10 @@ export default function Portfolio() {
     ];
 
     return (
-        <main className="min-h-screen bg-[#050505] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0B0E14] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden relative">
+            {/* Data Grid Overlay */}
+            <div className="fixed inset-0 grid-overlay z-0 opacity-20 pointer-events-none" />
+            
             {/* Ambient Background */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cyan-900/10 rounded-full blur-[120px]" />
@@ -52,8 +55,8 @@ export default function Portfolio() {
             </div>
 
             {/* Navigation */}
-            <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-md">
-                <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50 glass rounded-full px-8 py-4">
+                <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-white tracking-tighter">
                         Priya<span className="text-cyan-500">.ai</span>
                     </span>
@@ -69,42 +72,40 @@ export default function Portfolio() {
 
             <div className="relative z-10">
                 {/* Hero Section */}
-                <section className="pt-40 pb-20 min-h-screen flex items-center">
+                <section className="pt-32 pb-20 min-h-screen flex items-center overflow-hidden">
                     <motion.div 
-                        className="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center"
+                        className="max-w-7xl mx-auto px-6 w-full grid grid-cols-12 gap-12 items-center"
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                     >
-                        <motion.div variants={staggerContainer}>
+                        <motion.div variants={staggerContainer} className="col-span-12 md:col-span-7 text-center md:text-left order-2 md:order-1">
                             <motion.div variants={fadeInUp}>
-                                <Badge className="mb-6 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-4 py-1.5 text-sm backdrop-blur-md">
-                                    Available for Internships
-                                </Badge>
+                                <div className="inline-flex items-center gap-2 mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe">
+                                    <span className="relative flex h-3 w-3">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                                    </span>
+                                    <span className="text-sm font-semibold text-cyan-400 uppercase tracking-wider">Available for Internships</span>
+                                </div>
                             </motion.div>
 
-                            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6 drop-shadow-2xl">
+                            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-6">
                                 Priyadarshini V<br />
-                                <motion.span 
-                                    className="block mt-2 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:200%_auto]"
-                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                                    transition={{ duration: 5, ease: "linear", repeat: Infinity }}
-                                >
-                                    AI/ML Engineer
-                                </motion.span>
+                                <span className="text-gradient">AI/ML Engineer</span>
                             </motion.h1>
 
-                            <motion.p variants={fadeInUp} className="text-xl text-slate-400 max-w-xl leading-relaxed mt-6">
-                                AIML-focused Computer Science student with strong expertise in programming, machine learning, deep learning, and data analysis.
+                            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-slate-400 max-w-xl leading-relaxed mt-6 font-medium">
+                                Architecting neural solutions and scalable AI systems.
                             </motion.p>
 
-                            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mt-10">
-                                <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-500 text-white border-0 shadow-[0_0_20px_rgba(8,145,178,0.3)] px-8 h-14 text-base rounded-full transition-transform hover:scale-105 duration-300">
+                            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center md:justify-start gap-6 mt-12">
+                                <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-10 h-16 text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                     <a href="#projects">
                                         View Projects <ArrowRight className="ml-2 h-5 w-5" />
                                     </a>
                                 </Button>
-                                <Button variant="outline" size="lg" asChild className="border-white/10 hover:bg-white/5 bg-[#111] text-white h-14 px-8 text-base rounded-full transition-transform hover:scale-105 duration-300">
+                                <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-16 px-10 text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                     <a href="/resume.pdf">
                                         Download CV <Download className="ml-2 h-5 w-5" />
                                     </a>
@@ -112,12 +113,20 @@ export default function Portfolio() {
                             </motion.div>
                         </motion.div>
 
-                        {/* Profile Image Sequence */}
-                        <motion.div variants={fadeInUp} className="relative w-full aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.15)] border border-white/10 bg-black">
-                            <ImageSequenceViewer folderName="9" frameCount={40} className="w-full h-full rounded-none" />
+                        <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2">
+                            <div className="relative w-full max-w-[300px] md:max-w-[500px] aspect-square animate-float">
+                                <div className="absolute inset-0 bg-cyan-500/20 rounded-full blur-[80px] animate-pulse" />
+                                <img 
+                                    src="/brain.png" 
+                                    alt="3D Neural Network Brain" 
+                                    className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(0,209,255,0.3)]"
+                                />
+                            </div>
                         </motion.div>
                     </motion.div>
                 </section>
+
+
 
                 {/* Executive Summary */}
                 <section id="about" className="py-32 overflow-hidden">
@@ -141,7 +150,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* Publications & Conferences (Moved to top as requested) */}
-                <section id="publications" className="py-32 bg-[#0a0a0a]">
+                <section id="publications" className="py-32 bg-[#0B0E14]/50">
                     <div className="max-w-7xl mx-auto px-6">
                         <motion.div 
                             initial="hidden"
@@ -163,7 +172,7 @@ export default function Portfolio() {
                         >
                             {/* Pub 1 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col md:flex-row">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
                                         <ImageSequenceViewer folderName="4" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
                                     </div>
@@ -183,7 +192,7 @@ export default function Portfolio() {
 
                             {/* Pub 2 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
                                     <div className="w-full md:w-[400px] shrink-0 border-l border-white/10">
                                         <ImageSequenceViewer folderName="5" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
                                     </div>
@@ -203,7 +212,7 @@ export default function Portfolio() {
 
                             {/* Pub 3 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#111] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col md:flex-row">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
                                         <ImageSequenceViewer folderName="6" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
                                     </div>
@@ -247,7 +256,7 @@ export default function Portfolio() {
                         >
                             {/* Project 1 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="1" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
@@ -267,7 +276,7 @@ export default function Portfolio() {
 
                             {/* Project 2 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="2" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
@@ -287,7 +296,7 @@ export default function Portfolio() {
 
                             {/* Project 3 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#0a0a0a] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
                                     <ImageSequenceViewer folderName="3" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-purple-400 transition-colors">Smart Interview Agent</CardTitle>
@@ -309,7 +318,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* Experience & Skills (Technical Arsenal) */}
-                <section id="skills" className="py-32 bg-[#0a0a0a]">
+                <section id="skills" className="py-32 bg-[#0B0E14]/50">
                     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                         
                         <motion.div 
@@ -331,7 +340,7 @@ export default function Portfolio() {
                                 ))}
                             </div>
 
-                            <motion.div variants={slideInRight} className="space-y-6 bg-[#111] p-8 rounded-3xl border border-white/5">
+                            <motion.div variants={slideInRight} className="space-y-6 bg-[#12161F] p-8 rounded-3xl border border-white/5">
                                 <h3 className="text-2xl font-bold text-white flex items-center gap-3">
                                     <Briefcase className="w-6 h-6 text-cyan-500" /> Professional Experience
                                 </h3>
