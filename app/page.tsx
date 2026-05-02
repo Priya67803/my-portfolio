@@ -55,9 +55,9 @@ export default function Portfolio() {
             </div>
 
             {/* Navigation */}
-            <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50 glass rounded-full px-8 py-4">
+            <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] max-w-7xl z-50 glass rounded-2xl md:rounded-full px-6 md:px-8 py-3 md:py-4">
                 <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-white tracking-tighter">
+                    <span className="text-xl md:text-2xl font-bold text-white tracking-tighter">
                         Priya<span className="text-cyan-500">.ai</span>
                     </span>
                     <div className="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
@@ -67,45 +67,48 @@ export default function Portfolio() {
                         <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
                         <a href="#education" className="hover:text-cyan-400 transition-colors">Education</a>
                     </div>
+                    <Button variant="outline" size="sm" className="md:hidden border-white/20 text-white text-xs h-9 px-4 rounded-full">
+                        Menu
+                    </Button>
                 </div>
             </nav>
 
             <div className="relative z-10">
                 {/* Hero Section */}
-                <section className="pt-32 pb-20 min-h-screen flex items-center overflow-hidden">
+                <section className="pt-40 md:pt-32 pb-20 min-h-screen flex items-center overflow-hidden">
                     <motion.div 
-                        className="max-w-7xl mx-auto px-6 w-full grid grid-cols-12 gap-12 items-center"
+                        className="max-w-7xl mx-auto px-6 w-full grid grid-cols-12 gap-8 md:gap-12 items-center"
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                     >
-                        <motion.div variants={staggerContainer} className="col-span-12 md:col-span-7 text-center md:text-left order-2 md:order-1">
+                        <motion.div variants={staggerContainer} className="col-span-12 md:col-span-7 text-center md:text-left order-2 md:order-1 mt-8 md:mt-0">
                             <motion.div variants={fadeInUp}>
-                                <div className="inline-flex items-center gap-2 mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe">
+                                <div className="inline-flex items-center gap-2 mb-6 md:mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe">
                                     <span className="relative flex h-3 w-3">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                                         <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
                                     </span>
-                                    <span className="text-sm font-semibold text-cyan-400 uppercase tracking-wider">Available for Internships</span>
+                                    <span className="text-xs md:text-sm font-semibold text-cyan-400 uppercase tracking-wider">Available for Internships</span>
                                 </div>
                             </motion.div>
 
-                            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-6">
+                            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-6">
                                 Priyadarshini V<br />
                                 <span className="text-gradient">AI/ML Engineer</span>
                             </motion.h1>
 
-                            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-slate-400 max-w-xl leading-relaxed mt-6 font-medium">
+                            <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-slate-400 max-w-xl leading-relaxed mt-6 font-medium">
                                 Architecting neural solutions and scalable AI systems.
                             </motion.p>
 
-                            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center md:justify-start gap-6 mt-12">
-                                <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-10 h-16 text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-10 md:mt-12">
+                                <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-8 md:px-10 h-14 md:h-16 text-base md:text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                     <a href="#projects">
                                         View Projects <ArrowRight className="ml-2 h-5 w-5" />
                                     </a>
                                 </Button>
-                                <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-16 px-10 text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-14 md:h-16 px-8 md:px-10 text-base md:text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                     <a href="/resume.pdf">
                                         Download CV <Download className="ml-2 h-5 w-5" />
                                     </a>
@@ -114,7 +117,7 @@ export default function Portfolio() {
                         </motion.div>
 
                         <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2">
-                            <div className="relative w-full max-w-[300px] md:max-w-[500px] aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass">
+                            <div className="relative w-[280px] sm:w-[350px] md:w-full max-w-[500px] aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
                                 <video 
                                     src="/Profile.mp4" 
@@ -129,7 +132,6 @@ export default function Portfolio() {
                             {/* Decorative Glow */}
                             <div className="absolute -z-10 w-[120%] h-[120%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
                         </motion.div>
-
                     </motion.div>
                 </section>
 
@@ -171,7 +173,7 @@ export default function Portfolio() {
                         </motion.div>
 
                         <motion.div 
-                            className="space-y-12"
+                            className="grid grid-cols-1 gap-12"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
@@ -179,11 +181,11 @@ export default function Portfolio() {
                         >
                             {/* Pub 1 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col md:flex-row">
-                                    <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
-                                        <video src="/4.mp4" autoPlay muted loop playsInline className="w-full h-64 md:h-full object-cover" />
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col lg:flex-row min-h-[400px]">
+                                    <div className="w-full lg:w-[45%] shrink-0 border-r border-white/10 relative overflow-hidden">
+                                        <video src="/4.mp4" autoPlay muted loop playsInline className="w-full h-64 lg:h-full object-cover" />
                                     </div>
-                                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                                    <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
                                         <Badge variant="outline" className="w-fit mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 text-sm px-3 py-1">
                                             ICEFEET 2026 — Under Review
                                         </Badge>
@@ -199,11 +201,11 @@ export default function Portfolio() {
 
                             {/* Pub 2 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
-                                    <div className="w-full md:w-[400px] shrink-0 border-l border-white/10">
-                                        <video src="/5.mp4" autoPlay muted loop playsInline className="w-full h-64 md:h-full object-cover" />
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col lg:flex-row-reverse min-h-[400px]">
+                                    <div className="w-full lg:w-[45%] shrink-0 border-l border-white/10 relative overflow-hidden">
+                                        <video src="/5.mp4" autoPlay muted loop playsInline className="w-full h-64 lg:h-full object-cover" />
                                     </div>
-                                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                                    <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
                                         <Badge variant="outline" className="w-fit mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 text-sm px-3 py-1">
                                             ICDSNE 2026 — Under Review
                                         </Badge>
@@ -219,11 +221,11 @@ export default function Portfolio() {
 
                             {/* Pub 3 */}
                             <motion.div variants={slideUp}>
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col md:flex-row">
-                                    <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
-                                        <video src="/6.mp4" autoPlay muted loop playsInline className="w-full h-64 md:h-full object-cover" />
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col lg:flex-row min-h-[400px]">
+                                    <div className="w-full lg:w-[45%] shrink-0 border-r border-white/10 relative overflow-hidden">
+                                        <video src="/6.mp4" autoPlay muted loop playsInline className="w-full h-64 lg:h-full object-cover" />
                                     </div>
-                                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                                    <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
                                         <Badge variant="outline" className="w-fit mb-6 bg-purple-500/10 text-purple-400 border-purple-500/20 text-sm px-3 py-1">
                                             ICDSNE 2026 — Under Review
                                         </Badge>
@@ -259,19 +261,21 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="grid md:grid-cols-3 gap-8"
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                         >
                             {/* Project 1 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
-                                    <video src="/1.mp4" autoPlay muted loop playsInline className="w-full h-64 object-cover border-b border-white/10" />
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                                    <div className="relative h-64 shrink-0">
+                                        <video src="/1.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
+                                    </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
+                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
                                             Developed a real-time recommendation system using Decision Tree algorithm, integrating weather APIs, user preferences, and travel conditions.
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="pb-8">
+                                    <CardContent className="pb-8 mt-auto">
                                         <div className="flex flex-wrap gap-2">
                                             {["Flask", "JavaScript", "Decision Tree", "OpenStreetMap API"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
@@ -283,15 +287,17 @@ export default function Portfolio() {
 
                             {/* Project 2 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
-                                    <video src="/2.mp4" autoPlay muted loop playsInline className="w-full h-64 object-cover border-b border-white/10" />
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                                    <div className="relative h-64 shrink-0">
+                                        <video src="/2.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
+                                    </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
+                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
                                             Built an NLP dashboard using FastText, VADER, and TextStat for real-time language detection, sentiment analysis, and readability scoring.
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="pb-8">
+                                    <CardContent className="pb-8 mt-auto">
                                         <div className="flex flex-wrap gap-2">
                                             {["FastText", "VADER", "TextStat", "NLP"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
@@ -303,15 +309,17 @@ export default function Portfolio() {
 
                             {/* Project 3 */}
                             <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
-                                    <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-64 object-cover border-b border-white/10" />
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                                    <div className="relative h-64 shrink-0">
+                                        <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
+                                    </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-purple-400 transition-colors">Smart Interview Agent</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
+                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
                                             Implemented an end-to-end pipeline for dynamic question generation, answer analysis, and performance tracking using Generative AI.
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="pb-8">
+                                    <CardContent className="pb-8 mt-auto">
                                         <div className="flex flex-wrap gap-2">
                                             {["GenAI", "Activepieces", "LLM", "Workflow"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
