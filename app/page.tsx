@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import AntiGravitySkill from "@/components/AntiGravitySkill";
 // import ImageSequenceViewer from "@/components/ImageSequenceViewer";
-import { Github, Linkedin, Mail, Download, ArrowRight, Briefcase, Award, CheckCircle2, BrainCircuit, MessageSquare, Zap, Users, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ArrowRight, Briefcase, Award, CheckCircle2, BrainCircuit, MessageSquare, Zap, Users, Send, Code2, Database, Cpu, Layers, ShieldCheck, Terminal, Network, Workflow } from "lucide-react";
 
 export default function Portfolio() {
     // Animation variants
@@ -39,8 +39,15 @@ export default function Portfolio() {
     };
 
     const coreSkills = [
-        "Python", "Java", "Machine Learning", "Deep Learning",
-        "TensorFlow", "Snowflake", "Activepieces", "Cybersecurity"
+        { name: "Python", icon: Terminal },
+        { name: "Deep Learning", icon: Layers },
+        { name: "TensorFlow", icon: Zap },
+        { name: "Snowflake", icon: Database },
+        { name: "Cybersecurity", icon: ShieldCheck },
+        { name: "NLP", icon: MessageSquare },
+        { name: "Computer Vision", icon: Cpu },
+        { name: "API Integration", icon: Network },
+        { name: "Generative AI", icon: BrainCircuit }
     ];
 
     return (
@@ -99,7 +106,7 @@ export default function Portfolio() {
                             </motion.h1>
 
                             <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-slate-400 max-w-xl leading-relaxed mt-6 font-medium">
-                                Architecting neural solutions and scalable AI systems.
+                                Specializing in Deep Learning research and the development of scalable neural architectures for complex industrial challenges.
                             </motion.p>
 
                             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-10 md:mt-12">
@@ -117,7 +124,7 @@ export default function Portfolio() {
                         </motion.div>
 
                         <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2">
-                            <div className="relative w-[280px] sm:w-[350px] md:w-full max-w-[500px] aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass">
+                            <div className="relative w-[280px] sm:w-[350px] md:w-full max-w-[480px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
                                 <video 
                                     src="/Profile.mp4" 
@@ -125,13 +132,21 @@ export default function Portfolio() {
                                     muted 
                                     loop 
                                     playsInline
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none z-20" />
+                                <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none z-20" />
+                                {/* Overlay Accent */}
+                                <div className="absolute top-4 right-4 z-30">
+                                    <div className="glass px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+                                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">Live Profile</span>
+                                    </div>
+                                </div>
                             </div>
                             {/* Decorative Glow */}
-                            <div className="absolute -z-10 w-[120%] h-[120%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
+                            <div className="absolute -z-10 w-[110%] h-[110%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
                         </motion.div>
+
                     </motion.div>
                 </section>
 
@@ -152,8 +167,8 @@ export default function Portfolio() {
                         <motion.h2 variants={slideInRight} className="text-4xl md:text-5xl font-bold text-white mb-10">
                             Research-Driven & Scalable
                         </motion.h2>
-                        <motion.p variants={slideInLeft} className="text-xl md:text-3xl text-slate-300 leading-relaxed font-light">
-                            I am passionate about building intelligent systems. Experienced in working on comprehensive AI/ML projects, I aim to contribute to innovative solutions that make a tangible impact on complex data challenges.
+                        <motion.p variants={slideInLeft} className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
+                            I am a Deep Learning Researcher and AI Engineer dedicated to architecting intelligent systems that solve real-world complexities. My work spans from medical diagnosis optimization to predictive engine maintenance, leveraging state-of-the-art sequence modeling and attention mechanisms.
                         </motion.p>
                     </motion.div>
                 </section>
@@ -341,16 +356,22 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
+                            className="flex flex-col items-center md:items-start"
                         >
-                            <motion.div variants={slideInLeft} className="mb-12">
+                            <motion.div variants={slideInLeft} className="mb-12 text-center md:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Technical Arsenal</h2>
-                                <p className="text-slate-400 text-lg">A deep dive into the frameworks, languages, and tools I use to build scalable AI systems.</p>
+                                <p className="text-slate-400 text-lg max-w-lg">A deep dive into the frameworks, languages, and tools I use to build scalable AI systems.</p>
                             </motion.div>
 
-                            <div className="grid grid-cols-2 gap-4 mb-12">
+                            <div className="grid grid-cols-2 gap-4 mb-12 w-full">
                                 {coreSkills.map((skill) => (
-                                    <motion.div key={skill} variants={fadeInUp}>
-                                        <AntiGravitySkill name={skill} />
+                                    <motion.div key={skill.name} variants={fadeInUp}>
+                                        <div className="glass p-4 rounded-2xl flex items-center gap-3 border border-white/5 hover:border-cyan-500/30 transition-colors group">
+                                            <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all">
+                                                <skill.icon className="w-5 h-5" />
+                                            </div>
+                                            <span className="text-sm font-semibold text-slate-200">{skill.name}</span>
+                                        </div>
                                     </motion.div>
                                 ))}
                             </div>
@@ -385,9 +406,9 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInRight}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
+                            className="relative w-full max-w-[450px] mx-auto aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
                         >
-                            <video src="/8.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                            <video src="/8.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover max-h-[300px] md:max-h-full" />
                             <div className="absolute inset-0 border-[1px] border-white/10 rounded-3xl pointer-events-none" />
                         </motion.div>
 
@@ -404,9 +425,9 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInLeft}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10 order-2 lg:order-1"
+                            className="relative w-full max-w-[450px] mx-auto aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10 order-2 lg:order-1"
                         >
-                            <video src="/7.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                            <video src="/7.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover max-h-[300px] md:max-h-full" />
                         </motion.div>
 
                         <motion.div 
@@ -414,9 +435,9 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2"
+                            className="order-1 lg:order-2 flex flex-col items-center lg:items-start"
                         >
-                            <motion.div variants={slideInRight} className="mb-12">
+                            <motion.div variants={slideInRight} className="mb-12 text-center lg:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Education & Credentials</h2>
                                 <p className="text-slate-400 text-lg">Academic background and continuous learning certifications.</p>
                             </motion.div>
@@ -467,9 +488,9 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={slideInLeft}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.1)] border border-white/10 order-2 lg:order-1"
+                            className="relative w-full max-w-[450px] mx-auto aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.1)] border border-white/10 order-2 lg:order-1"
                         >
-                            <video src="/11.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                            <video src="/11.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover max-h-[300px] md:max-h-full" />
                         </motion.div>
 
                         <motion.div 
@@ -477,9 +498,9 @@ export default function Portfolio() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2"
+                            className="order-1 lg:order-2 flex flex-col items-center lg:items-start"
                         >
-                            <motion.div variants={slideInRight} className="mb-12">
+                            <motion.div variants={slideInRight} className="mb-12 text-center lg:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Professional Skills</h2>
                                 <p className="text-slate-400 text-lg">Beyond code, I bring strong interpersonal and strategic skills to every team I join.</p>
                             </motion.div>
@@ -507,40 +528,55 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                {/* Contact & Networking (Folder 13) */}
-                <section id="contact" className="py-32">
-                    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                {/* Contact & Networking (Reduced Size) */}
+                <section id="contact" className="py-24">
+                    <div className="max-w-5xl mx-auto px-6">
                         <motion.div 
+                            className="glass rounded-[2.5rem] p-8 md:p-12 overflow-hidden relative"
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={slideInLeft}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10 order-2 lg:order-1"
+                            viewport={{ once: true }}
+                            variants={fadeInUp}
                         >
-                            <video src="/13.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                        </motion.div>
+                            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
+                                    <p className="text-slate-400 mb-8 max-w-sm">Open for internship opportunities, research collaborations, or technical networking.</p>
+                                    
+                                    <div className="relative w-full max-w-[320px] aspect-square rounded-3xl overflow-hidden border border-white/10 mb-8">
+                                        <video src="/13.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                                    </div>
 
-                        <motion.div 
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={staggerContainer}
-                            className="order-1 lg:order-2"
-                        >
-                            <motion.div variants={slideInRight} className="mb-12">
-                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
-                                <p className="text-slate-400 text-lg">Whether it's a project collaboration, a job opportunity, or just a chat about AI—I'm always open to networking.</p>
-                            </motion.div>
-                            <motion.div variants={slideInRight} className="space-y-6">
-                                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                    <input type="text" placeholder="Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors" />
-                                    <input type="email" placeholder="Email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors" />
-                                    <textarea placeholder="Message" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors resize-none"></textarea>
-                                    <Button className="w-full bg-cyan-600 hover:bg-cyan-500 font-bold h-14 rounded-xl transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]">
-                                        Send Message <Send className="ml-2 w-5 h-5" />
-                                    </Button>
-                                </form>
-                            </motion.div>
+                                    <div className="flex gap-4">
+                                        <a href="mailto:priya6780@gmail.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all">
+                                            <Mail className="w-5 h-5" />
+                                        </a>
+                                        <a href="https://linkedin.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-blue-400 hover:bg-blue-500 hover:text-white transition-all">
+                                            <Linkedin className="w-5 h-5" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
+                                    <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                        <div>
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Name</label>
+                                            <input type="text" placeholder="John Doe" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                                        </div>
+                                        <div>
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Email</label>
+                                            <input type="email" placeholder="john@example.com" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                                        </div>
+                                        <div>
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Message</label>
+                                            <textarea placeholder="How can we collaborate?" rows={3} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
+                                        </div>
+                                        <Button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 font-bold h-12 rounded-xl transition-all shadow-lg shadow-cyan-500/20">
+                                            Send Neural Message <Send className="ml-2 w-4 h-4" />
+                                        </Button>
+                                    </form>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
                 </section>
