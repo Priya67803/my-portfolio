@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AntiGravitySkill from "@/components/AntiGravitySkill";
-import ImageSequenceViewer from "@/components/ImageSequenceViewer";
+// import ImageSequenceViewer from "@/components/ImageSequenceViewer";
 import { Github, Linkedin, Mail, Download, ArrowRight, Briefcase, Award, CheckCircle2, BrainCircuit, MessageSquare, Zap, Users, Send } from "lucide-react";
 
 export default function Portfolio() {
@@ -181,7 +181,7 @@ export default function Portfolio() {
                             <motion.div variants={slideUp}>
                                 <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
-                                        <ImageSequenceViewer folderName="4" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
+                                        <video src="/4.mp4" autoPlay muted loop playsInline className="w-full h-64 md:h-full object-cover" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center">
                                         <Badge variant="outline" className="w-fit mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 text-sm px-3 py-1">
@@ -201,7 +201,7 @@ export default function Portfolio() {
                             <motion.div variants={slideUp}>
                                 <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-blue-500/50 transition-all duration-500 flex flex-col md:flex-row-reverse">
                                     <div className="w-full md:w-[400px] shrink-0 border-l border-white/10">
-                                        <ImageSequenceViewer folderName="5" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
+                                        <video src="/5.mp4" autoPlay muted loop playsInline className="w-full h-64 md:h-full object-cover" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center">
                                         <Badge variant="outline" className="w-fit mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 text-sm px-3 py-1">
@@ -221,7 +221,7 @@ export default function Portfolio() {
                             <motion.div variants={slideUp}>
                                 <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all duration-500 flex flex-col md:flex-row">
                                     <div className="w-full md:w-[400px] shrink-0 border-r border-white/10">
-                                        <ImageSequenceViewer folderName="6" frameCount={40} className="w-full h-64 md:h-full rounded-none" />
+                                        <video src="/6.mp4" autoPlay muted loop playsInline className="w-full h-64 md:h-full object-cover" />
                                     </div>
                                     <div className="p-8 md:p-12 flex flex-col justify-center">
                                         <Badge variant="outline" className="w-fit mb-6 bg-purple-500/10 text-purple-400 border-purple-500/20 text-sm px-3 py-1">
@@ -264,7 +264,7 @@ export default function Portfolio() {
                             {/* Project 1 */}
                             <motion.div variants={slideUp} className="h-full">
                                 <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
-                                    <ImageSequenceViewer folderName="1" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
+                                    <video src="/1.mp4" autoPlay muted loop playsInline className="w-full h-64 object-cover border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
@@ -284,7 +284,7 @@ export default function Portfolio() {
                             {/* Project 2 */}
                             <motion.div variants={slideUp} className="h-full">
                                 <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
-                                    <ImageSequenceViewer folderName="2" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
+                                    <video src="/2.mp4" autoPlay muted loop playsInline className="w-full h-64 object-cover border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
@@ -304,7 +304,7 @@ export default function Portfolio() {
                             {/* Project 3 */}
                             <motion.div variants={slideUp} className="h-full">
                                 <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl">
-                                    <ImageSequenceViewer folderName="3" frameCount={40} className="w-full h-64 rounded-none border-b border-white/10" />
+                                    <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-64 object-cover border-b border-white/10" />
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-purple-400 transition-colors">Smart Interview Agent</CardTitle>
                                         <CardDescription className="text-slate-400 mt-4 text-base line-clamp-4">
@@ -379,7 +379,7 @@ export default function Portfolio() {
                             variants={slideInRight}
                             className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10"
                         >
-                            <ImageSequenceViewer folderName="8" frameCount={40} className="w-full h-full rounded-none" />
+                            <video src="/8.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
                             <div className="absolute inset-0 border-[1px] border-white/10 rounded-3xl pointer-events-none" />
                         </motion.div>
 
@@ -398,7 +398,7 @@ export default function Portfolio() {
                             variants={slideInLeft}
                             className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] border border-white/10 order-2 lg:order-1"
                         >
-                            <ImageSequenceViewer folderName="7" frameCount={40} className="w-full h-full rounded-none" />
+                            <video src="/7.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
                         </motion.div>
 
                         <motion.div 
@@ -461,7 +461,7 @@ export default function Portfolio() {
                             variants={slideInLeft}
                             className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.1)] border border-white/10 order-2 lg:order-1"
                         >
-                            <ImageSequenceViewer folderName="11" frameCount={40} className="w-full h-full rounded-none" />
+                            <video src="/11.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
                         </motion.div>
 
                         <motion.div 
@@ -509,7 +509,7 @@ export default function Portfolio() {
                             variants={slideInLeft}
                             className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-white/10 order-2 lg:order-1"
                         >
-                            <ImageSequenceViewer folderName="13" frameCount={40} className="w-full h-full rounded-none" />
+                            <video src="/13.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
                         </motion.div>
 
                         <motion.div 
