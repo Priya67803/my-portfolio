@@ -255,11 +255,11 @@ export default function Portfolio() {
                                 </span>
                             </motion.div>
                             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
-                                Research-Driven AI Solutions
+                                Research-Driven & Scalable
                             </h2>
                             <div className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl text-left">
                                 <p>
-                                    As a Deep Learning researcher and AI/ML Engineer, I specialize in designing robust, scalable systems that bridge the gap between theoretical research and real-world applications. My expertise spans computer vision, natural language processing, and predictive maintenance, with a strong focus on model interpretability, reliability, and cross-validated performance.
+                                    I am passionate about building intelligent systems. Experienced in working on comprehensive AI/ML projects, I aim to contribute to innovative solutions that make a tangible impact on complex data challenges.
                                 </p>
                             </div>
                         </motion.div>
