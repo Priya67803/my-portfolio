@@ -390,7 +390,7 @@ export default function Portfolio() {
                                         </div>
                                         <div className="flex gap-3">
                                             <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
+                                                <a href="https://github.com/Priya67803/tourist_recommender.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
                                             </Button>
                                             <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
                                                 <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
@@ -420,7 +420,7 @@ export default function Portfolio() {
                                         </div>
                                         <div className="flex gap-3">
                                             <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
+                                                <a href="https://github.com/Priya67803/NLP_.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
                                             </Button>
                                             <Button size="sm" asChild className="flex-1 bg-blue-600 hover:bg-blue-500 text-white gap-2">
                                                 <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
@@ -437,23 +437,23 @@ export default function Portfolio() {
                                         <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
-                                        <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Smart Interview Agent</CardTitle>
+                                        <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Multi-Modal Graph RAG for Intelligent Driver Safety Monitoring</CardTitle>
                                         <CardDescription className="text-muted-foreground mt-4 text-lg line-clamp-3">
-                                            Implemented an end-to-end pipeline for dynamic question generation, answer analysis, and performance tracking using Generative AI.
+                                            Architected a multi-modal Graph RAG system integrating telemetry and spatial analysis to enable context-aware driver safety monitoring and risk prediction.
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="pb-8 mt-auto flex flex-col gap-6">
                                         <div className="flex flex-wrap gap-2">
-                                            {["GenAI", "Activepieces", "LLM", "Workflow"].map(tag => (
+                                            {["Graph RAG", "Multi-Modal", "AI", "Safety"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
                                             ))}
                                         </div>
                                         <div className="flex gap-3">
                                             <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
+                                                <a href="https://github.com/Priya67803/RAG.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
                                             </Button>
                                             <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
-                                                <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
+                                                <a href="https://rag-six-rho.vercel.app" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
                                             </Button>
                                         </div>
                                     </CardContent>
