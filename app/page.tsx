@@ -259,13 +259,13 @@ export default function Portfolio() {
                         </h2>
                         <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-center">
                             <p>
-                                As a Deep Learning researcher and AI/ML Engineer, I focus on building robust, scalable architectures that bridge the gap between theoretical research and industrial application.
+                                Specializing in the intersection of Deep Learning and Neural Systems Engineering, I architect high-performance, scalable frameworks designed to operationalize theoretical advancements into mission-critical industrial solutions.
                             </p>
                             <p>
-                                My expertise spans computer vision, natural language processing, and predictive maintenance, with a core emphasis on model interpretability and cross-validated accuracy.
+                                My research-centric approach leverages advanced Computer Vision pipelines, Transformer-based NLP architectures, and predictive analytics, with a rigorous focus on model interpretability, robust cross-validation, and production-grade optimization.
                             </p>
                             <p>
-                                Currently pursuing B.E. at M. S. Ramaiah Institute of Technology, I've developed a diverse portfolio of projects ranging from RAG systems for driver safety to multi-modal PH classification models.
+                                Currently pursuing a B.E. at M. S. Ramaiah Institute of Technology, I have engineered complex systems ranging from Multi-Modal Graph RAG for safety monitoring to hybrid intelligence architectures for clinical diagnostic classification.
                             </p>
                         </div>
                     </motion.div>
