@@ -218,8 +218,8 @@ export default function Portfolio() {
                             </motion.div>
                         </motion.div>
 
-                        <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2 mb-8 md:mb-0">
-                            <div className="relative w-[180px] sm:w-[240px] md:w-full max-w-[320px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass group">
+                        <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-start md:justify-center items-center order-1 md:order-2 mb-8 md:mb-0">
+                            <div className="relative w-[180px] sm:w-[240px] md:w-full max-w-[320px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 shadow-xl glass group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
                                 <video 
                                     src="/Profile.mp4" 
@@ -229,10 +229,8 @@ export default function Portfolio() {
                                     playsInline
                                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none z-20" />
+                                <div className="absolute inset-0 border border-white/5 rounded-[2.5rem] md:rounded-[3rem] pointer-events-none z-20" />
                             </div>
-                            {/* Decorative Glow */}
-                            <div className="absolute -z-10 w-[110%] h-[110%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
                         </motion.div>
                     </motion.div>
                 </section>
@@ -256,12 +254,20 @@ export default function Portfolio() {
                                 About Me
                             </span>
                         </motion.div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
                             Research-Driven AI Solutions
                         </h2>
-                        <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
-                            I am an aspiring Artificial Intelligence and Machine Learning engineer passionate about developing intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, predictive analytics, and full-stack development. I transform data into actionable insights and build scalable solutions that deliver measurable impact.
-                        </p>
+                        <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
+                            <p>
+                                As a Deep Learning researcher and AI/ML Engineer, I focus on building robust, scalable architectures that bridge the gap between theoretical research and industrial application.
+                            </p>
+                            <p>
+                                My expertise spans computer vision, natural language processing, and predictive maintenance, with a core emphasis on model interpretability and cross-validated accuracy.
+                            </p>
+                            <p>
+                                Currently pursuing B.E. at M. S. Ramaiah Institute of Technology, I've developed a diverse portfolio of projects ranging from RAG systems for driver safety to multi-modal PH classification models.
+                            </p>
+                        </div>
                     </motion.div>
                 </section>
 
@@ -652,17 +658,25 @@ export default function Portfolio() {
                                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
                                     <p className="text-muted-foreground mb-8 max-w-sm">I'm always open to discussing AI, Machine Learning, research collaborations, and exciting career opportunities.</p>
                                     
-                                    <div className="relative w-full max-w-[320px] aspect-square rounded-3xl overflow-hidden border border-white/10 mb-8">
+                                    <div className="relative w-full max-w-[240px] aspect-square rounded-2xl overflow-hidden border border-white/5 mb-8">
                                         <video src="/13.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                     </div>
 
-                                    <div className="flex gap-4">
-                                        <a href="mailto:priya6780@gmail.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all">
-                                            <Mail className="w-5 h-5" />
-                                        </a>
-                                        <a href="https://linkedin.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-blue-400 hover:bg-blue-500 hover:text-white transition-all">
-                                            <Linkedin className="w-5 h-5" />
-                                        </a>
+                                    <div className="flex flex-col items-start gap-4 mb-8">
+                                        <div className="flex items-center gap-4 text-slate-300">
+                                            <div className="p-2 rounded-full bg-white/5 border border-white/10 text-cyan-400">
+                                                <Mail className="w-5 h-5" />
+                                            </div>
+                                            <span className="font-medium">priya6780@gmail.com</span>
+                                        </div>
+                                        <div className="flex gap-4">
+                                            <a href="https://linkedin.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-blue-400 hover:bg-blue-500 hover:text-white transition-all">
+                                                <Linkedin className="w-5 h-5" />
+                                            </a>
+                                            <a href="https://github.com/Priya67803" className="p-3 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-white hover:text-black transition-all">
+                                                <Github className="w-5 h-5" />
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -695,17 +709,15 @@ export default function Portfolio() {
             <footer className="mt-auto pt-20 pb-10 border-t border-white/5 bg-black/40 backdrop-blur-xl w-full relative z-10">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                        {/* Brand Column */}
                         <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
                             <div className="mb-4">
                                 <img src="/logo.png" alt="Priya Logo" className="h-10 w-auto object-contain" />
                             </div>
-                            <p className="text-muted-foreground text-base leading-relaxed max-w-xs">
+                            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
                                 Architecting the next generation of intelligent systems through research-driven AI and scalable deep learning architectures.
                             </p>
                         </div>
 
-                        {/* Quick Links */}
                         <div className="flex flex-col items-center md:items-start">
                             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h4>
                             <ul className="space-y-4 text-slate-400 text-sm">
