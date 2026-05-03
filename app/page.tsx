@@ -393,7 +393,7 @@ export default function Portfolio() {
                                                 <a href="https://github.com/Priya67803/tourist_recommender.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
                                             </Button>
                                             <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
-                                                <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
+                                                <a href="https://tourist-recommender.onrender.com" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
                                             </Button>
                                         </div>
                                     </CardContent>
