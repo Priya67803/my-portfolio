@@ -193,7 +193,7 @@ export default function Portfolio() {
                             </motion.h1>
 
                             <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-muted-foreground max-w-xl leading-relaxed mt-6 font-medium">
-                                Specializing in Deep Learning research and the development of scalable neural architectures for complex industrial challenges.
+                                Specializing in deep learning, machine learning, and the development of scalable AI solutions for solving complex industrial and real-world challenges.
                             </motion.p>
 
                             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-10 md:mt-12">
@@ -248,11 +248,16 @@ export default function Portfolio() {
                         <motion.div className="inline-block mb-6">
                             <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto" />
                         </motion.div>
+                        <motion.div variants={fadeInUp} className="mb-4">
+                            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400 glass px-4 py-2 rounded-full border border-cyan-500/20">
+                                About Me
+                            </span>
+                        </motion.div>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
                             Research-Driven & Scalable
                         </h2>
                         <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
-                            I am a Deep Learning Researcher and AI Engineer dedicated to architecting intelligent systems that solve real-world complexities. My work spans from medical diagnosis optimization to predictive engine maintenance, leveraging state-of-the-art sequence modeling and attention mechanisms.
+                            I am an aspiring Artificial Intelligence and Machine Learning engineer passionate about developing intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, predictive analytics, and full-stack development. I enjoy transforming data into actionable insights and building scalable solutions that create measurable impact.
                         </p>
                     </motion.div>
                 </section>
@@ -266,10 +271,13 @@ export default function Portfolio() {
                         viewport={{ once: true, margin: "-200px" }}
                         variants={slideInRight}
                     >
-                        <div className="flex items-center gap-4 mb-20">
+                        <div className="flex items-center gap-4 mb-6">
                             <h2 className="text-4xl md:text-6xl font-bold text-white">Publications</h2>
                             <div className="flex-grow h-[1px] bg-gradient-to-r from-cyan-500/50 to-transparent ml-4" />
                         </div>
+                        <p className="text-muted-foreground text-lg mb-14 max-w-3xl">
+                            My research focuses on applying artificial intelligence to solve complex engineering, healthcare, and predictive maintenance challenges.
+                        </p>
 
                         <div className="grid grid-cols-1 gap-12">
                             {/* Pub 1 */}
@@ -480,7 +488,7 @@ export default function Portfolio() {
                         >
                             <motion.div variants={slideInRight} className="mb-12 text-center lg:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Technical Arsenal</h2>
-                                <p className="text-muted-foreground text-lg max-w-lg">A deep dive into the frameworks, languages, and tools I use to build scalable AI systems.</p>
+                                <p className="text-muted-foreground text-lg max-w-lg">A comprehensive toolkit spanning machine learning, deep learning, data engineering, cloud platforms, and modern software development.</p>
                             </motion.div>
 
                             <div className="grid grid-cols-2 gap-4 mb-8 w-full">
@@ -624,7 +632,7 @@ export default function Portfolio() {
                             <div className="grid lg:grid-cols-2 gap-12 items-center">
                                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
-                                    <p className="text-muted-foreground mb-8 max-w-sm">Open for internship opportunities, research collaborations, or technical networking.</p>
+                                    <p className="text-muted-foreground mb-8 max-w-sm">I'm always open to discussing AI, Machine Learning, research collaborations, and exciting career opportunities.</p>
                                     
                                     <div className="relative w-full max-w-[320px] aspect-square rounded-3xl overflow-hidden border border-white/10 mb-8">
                                         <video src="/13.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
@@ -716,7 +724,7 @@ export default function Portfolio() {
 
                             <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
                                 <p className="text-muted-foreground/60 text-xs font-medium uppercase tracking-widest">
-                                    Built with Next.js and Framer Motion
+                                    Designed and developed with passion for Artificial Intelligence and Innovation.
                                 </p>
                                 <p className="text-muted-foreground/80 text-xs font-medium">
                                     © 2026 Priyadarshini V. All rights reserved.
