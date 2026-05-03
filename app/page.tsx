@@ -254,10 +254,10 @@ export default function Portfolio() {
                             </span>
                         </motion.div>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
-                            Research-Driven & Scalable
+                            Research-Driven AI Solutions
                         </h2>
                         <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
-                            I am an aspiring Artificial Intelligence and Machine Learning engineer passionate about developing intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, predictive analytics, and full-stack development. I enjoy transforming data into actionable insights and building scalable solutions that create measurable impact.
+                            I am an aspiring Artificial Intelligence and Machine Learning engineer passionate about developing intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, predictive analytics, and full-stack development. I transform data into actionable insights and build scalable solutions that deliver measurable impact.
                         </p>
                     </motion.div>
                 </section>
