@@ -219,7 +219,7 @@ export default function Portfolio() {
                         </motion.div>
 
                         <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-start md:justify-center items-center order-1 md:order-2 mb-8 md:mb-0">
-                            <div className="relative w-[180px] sm:w-[240px] md:w-full max-w-[320px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 shadow-xl glass group">
+                            <div className="relative w-[210px] sm:w-[280px] md:w-full max-w-[380px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 shadow-xl glass group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
                                 <video 
                                     src="/Profile.mp4" 
@@ -257,7 +257,7 @@ export default function Portfolio() {
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
                             Research-Driven AI Solutions
                         </h2>
-                        <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
+                        <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-center">
                             <p>
                                 As a Deep Learning researcher and AI/ML Engineer, I focus on building robust, scalable architectures that bridge the gap between theoretical research and industrial application.
                             </p>
