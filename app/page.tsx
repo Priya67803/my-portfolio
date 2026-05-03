@@ -41,6 +41,7 @@ export default function Portfolio() {
     const [expandedPub, setExpandedPub] = React.useState<number | null>(null);
 
     React.useLayoutEffect(() => {
+        window.scrollTo(0, 0);
         if (containerRef.current) {
             containerRef.current.scrollTop = 0;
         }
@@ -165,7 +166,7 @@ export default function Portfolio() {
                 </motion.div>
             </nav>
 
-            <main ref={containerRef} className="min-h-screen text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden relative">
+            <main ref={containerRef} className="flex flex-col min-h-screen text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden relative">
                 {/* Data Grid Overlay */}
                 <div className="fixed inset-0 grid-overlay z-0 opacity-20 pointer-events-none" />
 
@@ -178,7 +179,7 @@ export default function Portfolio() {
                         animate="visible"
                         variants={staggerContainer}
                     >
-                        <motion.div variants={staggerContainer} className="col-span-12 md:col-span-7 text-center md:text-left order-2 md:order-1 mt-8 md:mt-0">
+                        <motion.div variants={staggerContainer} className="col-span-12 md:col-span-7 text-left order-2 md:order-1 mt-8 md:mt-0">
                             <motion.div variants={fadeInUp}>
                                 <div className="inline-flex items-center gap-2 mb-6 md:mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe">
                                     <span className="relative flex h-3 w-3">
@@ -189,16 +190,16 @@ export default function Portfolio() {
                                 </div>
                             </motion.div>
 
-                            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4">
-                                Priyadarshini V<br />
-                                <span className="text-gradient">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
+                            <motion.h1 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 brand-logo">
+                                PRIYA V.<br />
+                                <span className="text-gradient font-inter tracking-normal normal-case">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                             </motion.h1>
 
-                            <motion.p variants={fadeInUp} className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mt-4 font-medium">
+                            <motion.p variants={fadeInUp} className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-4 font-medium">
                                 Specializing in deep learning, machine learning, and the development of scalable AI solutions for solving complex industrial and real-world challenges.
                             </motion.p>
 
-                            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 mt-8 md:mt-10">
+                            <motion.div variants={fadeInUp} className="flex flex-wrap justify-start gap-3 md:gap-4 mt-8 md:mt-10">
                                 <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-6 md:px-8 h-12 md:h-14 text-sm md:text-base font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                     <a href="#projects">
                                         View Projects <ArrowRight className="ml-2 h-4 w-4" />
@@ -218,7 +219,7 @@ export default function Portfolio() {
                         </motion.div>
 
                         <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2">
-                            <div className="relative w-[240px] sm:w-[300px] md:w-full max-w-[380px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass group">
+                            <div className="relative w-[180px] sm:w-[240px] md:w-full max-w-[320px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
                                 <video 
                                     src="/Profile.mp4" 
@@ -316,7 +317,7 @@ export default function Portfolio() {
                             ].map((pub) => (
                                 <motion.div key={pub.id} variants={slideUp}>
                                     <Card className={`bg-[#12161F] border-white/10 overflow-hidden group hover:border-${pub.color}-500/50 transition-all duration-500 flex flex-col ${pub.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} min-h-[400px]`}>
-                                        <div className={`w-full lg:w-[45%] shrink-0 ${pub.reversed ? 'border-l' : 'border-r'} border-white/10 relative overflow-hidden h-64 lg:h-[450px]`}>
+                                        <div className={`w-full lg:w-[45%] shrink-0 ${pub.reversed ? 'border-l' : 'border-r'} border-white/10 relative overflow-hidden h-48 lg:h-[320px]`}>
                                             <video src={pub.video} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                         </div>
                                         <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
@@ -372,9 +373,9 @@ export default function Portfolio() {
                         viewport={{ once: true, margin: "-200px" }}
                         variants={slideInLeft}
                     >
-                        <div className="flex items-center gap-4 mb-12 flex-row-reverse">
+                        <div className="flex items-center gap-4 mb-12">
                             <h2 className="text-3xl md:text-5xl font-bold text-white">Projects</h2>
-                            <div className="flex-grow h-[1px] bg-gradient-to-l from-blue-500/50 to-transparent mr-4" />
+                            <div className="flex-grow h-[1px] bg-gradient-to-r from-blue-500/50 to-transparent ml-4" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -494,7 +495,7 @@ export default function Portfolio() {
                             variants={staggerContainer}
                             className="flex flex-col items-center lg:items-start order-2 lg:order-1"
                         >
-                            <motion.div variants={slideInRight} className="mb-10 text-center lg:text-left">
+                            <motion.div variants={slideInRight} className="mb-10 text-left">
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Technical Arsenal</h2>
                                 <p className="text-muted-foreground text-base max-w-lg">A comprehensive toolkit spanning machine learning, deep learning, data engineering, cloud platforms, and modern software development.</p>
                             </motion.div>
@@ -502,11 +503,11 @@ export default function Portfolio() {
                             <div className="grid grid-cols-2 gap-4 mb-8 w-full">
                                 {coreSkills.map((skill) => (
                                     <motion.div key={skill.name} variants={fadeInUp}>
-                                        <div className="glass p-5 rounded-2xl flex items-center gap-4 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all duration-300 group">
-                                            <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)] skill-icon-glow">
-                                                <skill.icon className="w-5 h-5" />
+                                        <div className="glass p-3 md:p-5 rounded-2xl flex items-center gap-2 md:gap-4 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all duration-300 group">
+                                            <div className="p-2 md:p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)] skill-icon-glow shrink-0">
+                                                <skill.icon className="w-4 h-4 md:w-5 md:h-5" />
                                             </div>
-                                            <span className="text-sm md:text-base font-bold text-slate-100">{skill.name}</span>
+                                            <span className="text-[11px] xs:text-xs md:text-base font-bold text-slate-100 truncate">{skill.name}</span>
                                         </div>
                                     </motion.div>
                                 ))}
@@ -538,7 +539,7 @@ export default function Portfolio() {
                             variants={staggerContainer} 
                             className="flex flex-col items-center lg:items-start order-2"
                         >
-                            <motion.div variants={slideInRight} className="mb-10 text-center lg:text-left">
+                            <motion.div variants={slideInRight} className="mb-10 text-left">
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Education and Credentials</h2>
                                 <p className="text-muted-foreground text-base">Academic background and continuous learning certifications.</p>
                             </motion.div>
@@ -566,7 +567,8 @@ export default function Portfolio() {
                                         { name: "Generative AI Leader — Google Cloud", link: "/Gen ai.pdf" },
                                         { name: "Deep Learning — Google Cloud", link: "/deep learning.pdf" },
                                         { name: "Ethical Hacking — Udemy", link: "/Ethical hacking.pdf" },
-                                        { name: "Machine Learning — Infosys", link: "/ML certificate.pdf" }
+                                        { name: "Machine Learning — Infosys", link: "/ML certificate.pdf" },
+                                        { name: "Snowflake — Data Warehousing", link: "/snowflake.pdf" }
                                     ].map((cert, i) => (
                                         <li key={i}>
                                             <a 
@@ -607,7 +609,7 @@ export default function Portfolio() {
                             variants={staggerContainer}
                             className="flex flex-col items-center lg:items-start order-2 lg:order-1"
                         >
-                            <motion.div variants={slideInRight} className="mb-10 text-center lg:text-left">
+                            <motion.div variants={slideInRight} className="mb-10 text-left">
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Professional Skills</h2>
                                 <p className="text-muted-foreground text-base">Beyond code, I bring strong interpersonal and strategic skills to every team I join.</p>
                             </motion.div>
@@ -646,7 +648,7 @@ export default function Portfolio() {
                             variants={fadeInUp}
                         >
                             <div className="grid lg:grid-cols-2 gap-12 items-center">
-                                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                                <div className="flex flex-col items-start text-left">
                                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
                                     <p className="text-muted-foreground mb-8 max-w-sm">I'm always open to discussing AI, Machine Learning, research collaborations, and exciting career opportunities.</p>
                                     
@@ -686,70 +688,70 @@ export default function Portfolio() {
                             </div>
                         </motion.div>
                     </div>
-
-                    {/* Integrated Footer */}
-                    <footer className="mt-24 pt-20 pb-10 border-t border-white/5 bg-black/40 backdrop-blur-xl w-full">
-                        <div className="max-w-7xl mx-auto px-6">
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                                {/* Brand Column */}
-                                <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
-                                    <div className="mb-4">
-                                        <img src="/logo.png" alt="Priya Logo" className="h-10 w-auto object-contain" />
-                                    </div>
-                                    <p className="text-muted-foreground text-base leading-relaxed max-w-xs">
-                                        Architecting the next generation of intelligent systems through research-driven AI and scalable deep learning architectures.
-                                    </p>
-                                </div>
-
-                                {/* Quick Links */}
-                                <div className="flex flex-col items-center md:items-start">
-                                    <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h4>
-                                    <ul className="space-y-4 text-slate-400 text-sm">
-                                        <li><a href="#home" className="hover:text-cyan-400 transition-colors">Home</a></li>
-                                        <li><a href="#about" className="hover:text-cyan-400 transition-colors">About</a></li>
-                                        <li><a href="#publications" className="hover:text-cyan-400 transition-colors">Publications</a></li>
-                                        <li><a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a></li>
-                                        <li><a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a></li>
-                                    </ul>
-                                </div>
-
-                                {/* Socials/Connect */}
-                                <div className="flex flex-col items-center md:items-start">
-                                    <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Connect</h4>
-                                    <div className="flex gap-4">
-                                        <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-all">
-                                            <Github className="w-5 h-5" />
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-blue-500/20 hover:text-blue-400 transition-all">
-                                            <Linkedin className="w-5 h-5" />
-                                        </a>
-                                        <a href="mailto:priya6780@gmail.com" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-all">
-                                            <Mail className="w-5 h-5" />
-                                        </a>
-                                    </div>
-                                </div>
-
-                                {/* Resume CTA */}
-                                <div className="flex flex-col items-center md:items-start">
-                                    <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Credentials</h4>
-                                    <Button variant="outline" asChild className="border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold px-6 h-12 rounded-xl transition-all">
-                                        <a href="/resume.pdf">Download Full CV <Download className="ml-2 w-4 h-4" /></a>
-                                    </Button>
-                                </div>
-                            </div>
-
-                            <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                                <p className="text-muted-foreground/60 text-xs font-medium uppercase tracking-widest">
-                                    Designed and developed with passion for Artificial Intelligence and Innovation.
-                                </p>
-                                <p className="text-muted-foreground/80 text-xs font-medium">
-                                    © 2026 Priyadarshini V. All rights reserved.
-                                </p>
-                            </div>
-                        </div>
-                    </footer>
                 </section>
             </div>
+            
+            {/* Integrated Footer - Moved Outside Sections */}
+            <footer className="mt-auto pt-20 pb-10 border-t border-white/5 bg-black/40 backdrop-blur-xl w-full relative z-10">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                        {/* Brand Column */}
+                        <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+                            <div className="mb-4">
+                                <img src="/logo.png" alt="Priya Logo" className="h-10 w-auto object-contain" />
+                            </div>
+                            <p className="text-muted-foreground text-base leading-relaxed max-w-xs">
+                                Architecting the next generation of intelligent systems through research-driven AI and scalable deep learning architectures.
+                            </p>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div className="flex flex-col items-center md:items-start">
+                            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h4>
+                            <ul className="space-y-4 text-slate-400 text-sm">
+                                <li><a href="#home" className="hover:text-cyan-400 transition-colors">Home</a></li>
+                                <li><a href="#about" className="hover:text-cyan-400 transition-colors">About</a></li>
+                                <li><a href="#publications" className="hover:text-cyan-400 transition-colors">Publications</a></li>
+                                <li><a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a></li>
+                                <li><a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a></li>
+                            </ul>
+                        </div>
+
+                        {/* Socials/Connect */}
+                        <div className="flex flex-col items-center md:items-start">
+                            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Connect</h4>
+                            <div className="flex gap-4">
+                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-all">
+                                    <Github className="w-5 h-5" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-blue-500/20 hover:text-blue-400 transition-all">
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
+                                <a href="mailto:priya6780@gmail.com" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-all">
+                                    <Mail className="w-5 h-5" />
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Resume CTA */}
+                        <div className="flex flex-col items-center md:items-start">
+                            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Credentials</h4>
+                            <Button variant="outline" asChild className="border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold px-6 h-12 rounded-xl transition-all">
+                                <a href="/resume.pdf">Download Full CV <Download className="ml-2 w-4 h-4" /></a>
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-muted-foreground/60 text-xs font-medium uppercase tracking-widest">
+                            Designed and developed with passion for Artificial Intelligence and Innovation.
+                        </p>
+                        <p className="text-muted-foreground/80 text-xs font-medium">
+                            © 2026 Priyadarshini V. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
 );
