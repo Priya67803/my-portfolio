@@ -174,14 +174,14 @@ export default function Portfolio() {
                     {/* Hero Section */}
                     <section id="home" className="min-h-[90vh] flex items-center overflow-hidden pt-28 md:pt-24 pb-12">
                         <motion.div
-                            className="max-w-5xl mx-auto px-6 w-full flex flex-col items-center text-center"
+                            className="max-w-7xl mx-auto px-6 w-full flex flex-col lg:flex-row items-center justify-between gap-12"
                             initial="hidden"
                             animate="visible"
                             variants={staggerContainer}
                         >
-                            <motion.div variants={staggerContainer} className="flex flex-col items-center mb-12">
-                                <motion.div variants={fadeInUp} className="flex justify-center">
-                                    <div className="inline-flex items-center gap-2 mb-6 md:mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe">
+                            <motion.div variants={staggerContainer} className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
+                                <motion.div variants={fadeInUp}>
+                                    <div className="inline-flex items-center gap-2 mb-6 md:mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe shadow-[0_0_20px_rgba(6,182,212,0.3)]">
                                         <span className="relative flex h-3 w-3">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
@@ -190,16 +190,16 @@ export default function Portfolio() {
                                     </div>
                                 </motion.div>
 
-                                <motion.h1 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 brand-logo">
+                                <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 brand-logo">
                                     Priyadarshini V<br />
                                     <span className="text-gradient font-inter tracking-normal normal-case">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                                 </motion.h1>
 
-                                <motion.p variants={fadeInUp} className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-4 font-medium">
-                                    As a Deep Learning researcher and AI/ML Engineer, I specialize in designing robust, scalable systems that bridge the gap between theoretical research and real-world applications. My expertise spans computer vision, natural language processing, and predictive maintenance, with a strong focus on model interpretability, reliability, and cross-validated performance.
+                                <motion.p variants={fadeInUp} className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-4 font-medium">
+                                    Specializing in deep learning, machine learning, and the development of scalable AI solutions for solving complex industrial and real-world challenges.
                                 </motion.p>
 
-                                <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 md:mt-10">
+                                <motion.div variants={fadeInUp} className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 mt-8 md:mt-10">
                                     <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-6 md:px-8 h-12 md:h-14 text-sm md:text-base font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="#projects">
                                             View Projects <ArrowRight className="ml-2 h-4 w-4" />
@@ -218,18 +218,21 @@ export default function Portfolio() {
                                 </motion.div>
                             </motion.div>
 
-                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center mb-12">
-                                <div className="relative w-[210px] sm:w-[280px] md:w-full max-w-[380px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 shadow-xl glass group">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
+                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center flex-1 w-full">
+                                <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] glass group">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-40" />
+                                    <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                                     <video
                                         src="/Profile.mp4"
                                         autoPlay
                                         muted
                                         loop
                                         playsInline
-                                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 relative z-0"
                                     />
-                                    <div className="absolute inset-0 border border-white/5 rounded-[2.5rem] md:rounded-[3rem] pointer-events-none z-20" />
+                                    <div className="absolute inset-0 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] pointer-events-none z-20" />
+                                    {/* Neon Glow Border Effect */}
+                                    <div className="absolute inset-0 rounded-[2.5rem] md:rounded-[3rem] shadow-[inset_0_0_30px_rgba(6,182,212,0.2)] pointer-events-none z-10" />
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -240,26 +243,23 @@ export default function Portfolio() {
                     {/* Executive Summary */}
                     <section id="about" className="min-h-[50vh] flex items-center overflow-hidden py-24">
                         <motion.div
-                            className="max-w-4xl mx-auto px-6 text-left"
+                            className="max-w-4xl mx-auto px-6 text-center"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-200px" }}
-                            variants={slideInLeft}
+                            variants={fadeInUp}
                         >
-                            <motion.div className="inline-block mb-6">
-                                <div className="w-24 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
-                            </motion.div>
-                            <motion.div variants={fadeInUp} className="mb-4">
+                            <motion.div className="flex justify-center mb-6">
                                 <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400 glass px-4 py-2 rounded-full border border-cyan-500/20">
                                     About Me
                                 </span>
                             </motion.div>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
-                                Research-Driven & Scalable
+                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                                Research-Driven AI Solutions
                             </h2>
-                            <div className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl text-left">
+                            <div className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                                 <p>
-                                    I am passionate about building intelligent systems. Experienced in working on comprehensive AI/ML projects, I aim to contribute to innovative solutions that make a tangible impact on complex data challenges.
+                                    I am an aspiring Artificial Intelligence and Machine Learning engineer passionate about developing intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, predictive analytics, and full-stack development. I transform data into actionable insights and build scalable solutions that deliver measurable impact.
                                 </p>
                             </div>
                         </motion.div>
