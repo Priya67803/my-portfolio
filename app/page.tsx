@@ -6,12 +6,37 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import AntiGravitySkill from "@/components/AntiGravitySkill";
 // import ImageSequenceViewer from "@/components/ImageSequenceViewer";
-import { Github, Linkedin, Mail, Download, ArrowRight, Briefcase, Award, CheckCircle2, BrainCircuit, MessageSquare, Zap, Users, Send, Code2, Database, Cpu, Layers, ShieldCheck, Terminal, Network, Workflow, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ArrowRight, ExternalLink, FileText, Award, BrainCircuit, MessageSquare, Zap, Users, Send, Database, Cpu, Layers, ShieldCheck, Terminal, Network, Menu, X } from "lucide-react";
 import React from "react";
+
+function useTypingEffect(words: string[], typingSpeed = 90, deletingSpeed = 55, pauseMs = 1800) {
+    const [displayed, setDisplayed] = React.useState("");
+    const [wordIdx, setWordIdx] = React.useState(0);
+    const [isDeleting, setIsDeleting] = React.useState(false);
+
+    React.useEffect(() => {
+        const current = words[wordIdx];
+        let timeout: ReturnType<typeof setTimeout>;
+        if (!isDeleting && displayed === current) {
+            timeout = setTimeout(() => setIsDeleting(true), pauseMs);
+        } else if (isDeleting && displayed === "") {
+            setIsDeleting(false);
+            setWordIdx((i) => (i + 1) % words.length);
+        } else {
+            timeout = setTimeout(() => {
+                setDisplayed(isDeleting ? current.slice(0, displayed.length - 1) : current.slice(0, displayed.length + 1));
+            }, isDeleting ? deletingSpeed : typingSpeed);
+        }
+        return () => clearTimeout(timeout);
+    }, [displayed, isDeleting, wordIdx, words, typingSpeed, deletingSpeed, pauseMs]);
+
+    return displayed;
+}
 
 export default function Portfolio() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const containerRef = React.useRef<HTMLElement>(null);
+    const typedTitle = useTypingEffect(["AI/ML Engineer", "Deep Learning Researcher", "Neural Architect", "AI Systems Builder"]);
 
     React.useLayoutEffect(() => {
         if (containerRef.current) {
@@ -93,10 +118,10 @@ export default function Portfolio() {
                     </div>
                     
                     <div className="hidden md:flex items-center gap-4 ml-6 pl-6 border-l border-white/10">
-                        <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                        <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors">
                             <Github className="w-5 h-5" />
                         </a>
-                        <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                        <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors">
                             <Linkedin className="w-5 h-5" />
                         </a>
                     </div>
@@ -164,10 +189,10 @@ export default function Portfolio() {
 
                             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-6">
                                 Priyadarshini V<br />
-                                <span className="text-gradient">AI/ML Engineer</span>
+                                <span className="text-gradient">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                             </motion.h1>
 
-                            <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-slate-400 max-w-xl leading-relaxed mt-6 font-medium">
+                            <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-muted-foreground max-w-xl leading-relaxed mt-6 font-medium">
                                 Specializing in Deep Learning research and the development of scalable neural architectures for complex industrial challenges.
                             </motion.p>
 
@@ -178,8 +203,13 @@ export default function Portfolio() {
                                     </a>
                                 </Button>
                                 <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-14 md:h-16 px-8 md:px-10 text-base md:text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
-                                    <a href="/resume.pdf">
+                                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                                         Download CV <Download className="ml-2 h-5 w-5" />
+                                    </a>
+                                </Button>
+                                <Button variant="outline" size="lg" asChild className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 h-14 md:h-16 px-8 md:px-10 text-base md:text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                    <a href="#contact">
+                                        Contact Me <Mail className="ml-2 h-5 w-5" />
                                     </a>
                                 </Button>
                             </motion.div>
@@ -255,12 +285,13 @@ export default function Portfolio() {
                                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors">
                                             Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis
                                         </h3>
-                                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
+                                        <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                                             A novel architectural approach utilizing hybrid intelligence to accurately and efficiently diagnose pulmonary hypertension from complex medical datasets.
                                         </p>
-                                        <Button variant="outline" className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2">
-                                            Request Abstract <Mail className="w-4 h-4" />
-                                        </Button>
+                                        <div className="flex flex-wrap gap-3">
+                                            <Button variant="outline" asChild className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2"><a href="mailto:priya6780@gmail.com?subject=Abstract Request: Pulmonary Hypertension Paper">Request Abstract <Mail className="w-4 h-4" /></a></Button>
+                                            <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-bold gap-2"><a href="#" target="_blank" rel="noopener noreferrer"><FileText className="w-4 h-4" /> View Paper</a></Button>
+                                        </div>
                                     </div>
                                 </Card>
                             </motion.div>
@@ -278,12 +309,13 @@ export default function Portfolio() {
                                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
                                             Scalable Fault Detection in Aircraft Engines via Sequence Modeling and Attention-Based Autoencoding
                                         </h3>
-                                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
+                                        <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                                             Advanced deep learning framework analyzing time-series sensor data to predict remaining useful life and classify engine faults before they occur.
                                         </p>
-                                        <Button variant="outline" className="w-fit border-blue-500/30 hover:bg-blue-500/10 text-blue-400 font-bold gap-2">
-                                            Request Abstract <Mail className="w-4 h-4" />
-                                        </Button>
+                                        <div className="flex flex-wrap gap-3">
+                                            <Button variant="outline" asChild className="w-fit border-blue-500/30 hover:bg-blue-500/10 text-blue-400 font-bold gap-2"><a href="mailto:priya6780@gmail.com?subject=Abstract Request: Aircraft Engine Paper">Request Abstract <Mail className="w-4 h-4" /></a></Button>
+                                            <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-bold gap-2"><a href="#" target="_blank" rel="noopener noreferrer"><FileText className="w-4 h-4" /> View Paper</a></Button>
+                                        </div>
                                     </div>
                                 </Card>
                             </motion.div>
@@ -301,12 +333,13 @@ export default function Portfolio() {
                                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors">
                                             Real-Time Detection of Online Grooming Behaviors Using YOLOv8 for Risk Assessment
                                         </h3>
-                                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
+                                        <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                                             Leveraging state-of-the-art computer vision models like YOLOv8 to identify and assess risks associated with online grooming in real-time environments.
                                         </p>
-                                        <Button variant="outline" className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2">
-                                            Request Abstract <Mail className="w-4 h-4" />
-                                        </Button>
+                                        <div className="flex flex-wrap gap-3">
+                                            <Button variant="outline" asChild className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2"><a href="mailto:priya6780@gmail.com?subject=Abstract Request: YOLOv8 Grooming Paper">Request Abstract <Mail className="w-4 h-4" /></a></Button>
+                                            <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-bold gap-2"><a href="#" target="_blank" rel="noopener noreferrer"><FileText className="w-4 h-4" /> View Paper</a></Button>
+                                        </div>
                                     </div>
                                 </Card>
                             </motion.div>
@@ -330,14 +363,14 @@ export default function Portfolio() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {/* Project 1 */}
-                            <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                            <motion.div variants={slideUp} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="h-full">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:shadow-[0_24px_48px_rgba(6,182,212,0.18)] hover:border-cyan-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
                                     <div className="relative h-64 shrink-0">
                                         <video src="/1.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base">
+                                        <CardDescription className="text-muted-foreground mt-4 text-lg">
                                             Developed a real-time recommendation system achieving <span className="text-cyan-400 font-bold">94% accuracy</span> in user-preference matching using custom decision tree heuristics.
                                         </CardDescription>
                                     </CardHeader>
@@ -347,12 +380,12 @@ export default function Portfolio() {
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
                                             ))}
                                         </div>
-                                        <div className="flex gap-4">
-                                            <Button variant="outline" size="sm" className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                <Github className="w-4 h-4" /> Code
+                                        <div className="flex gap-3">
+                                            <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
+                                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
                                             </Button>
-                                            <Button size="sm" className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
-                                                <ArrowRight className="w-4 h-4" /> Demo
+                                            <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
+                                                <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
                                             </Button>
                                         </div>
                                     </CardContent>
@@ -360,14 +393,14 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Project 2 */}
-                            <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                            <motion.div variants={slideUp} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="h-full">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:shadow-[0_24px_48px_rgba(59,130,246,0.18)] hover:border-blue-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
                                     <div className="relative h-64 shrink-0">
                                         <video src="/2.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base">
+                                        <CardDescription className="text-muted-foreground mt-4 text-lg">
                                             Built a high-performance NLP dashboard that <span className="text-blue-400 font-bold">reduced latency by 20%</span> while detecting nuanced linguistic biases in real-time.
                                         </CardDescription>
                                     </CardHeader>
@@ -377,12 +410,12 @@ export default function Portfolio() {
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
                                             ))}
                                         </div>
-                                        <div className="flex gap-4">
-                                            <Button variant="outline" size="sm" className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                <Github className="w-4 h-4" /> Code
+                                        <div className="flex gap-3">
+                                            <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
+                                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
                                             </Button>
-                                            <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-500 text-white gap-2">
-                                                <ArrowRight className="w-4 h-4" /> Demo
+                                            <Button size="sm" asChild className="flex-1 bg-blue-600 hover:bg-blue-500 text-white gap-2">
+                                                <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
                                             </Button>
                                         </div>
                                     </CardContent>
@@ -390,22 +423,30 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Project 3 */}
-                            <motion.div variants={slideUp} className="h-full">
-                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
+                            <motion.div variants={slideUp} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="h-full">
+                                <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:shadow-[0_24px_48px_rgba(168,85,247,0.18)] hover:border-cyan-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
                                     <div className="relative h-64 shrink-0">
                                         <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
                                     </div>
                                     <CardHeader className="flex-grow pt-8">
                                         <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Smart Interview Agent</CardTitle>
-                                        <CardDescription className="text-slate-400 mt-4 text-base line-clamp-3">
+                                        <CardDescription className="text-muted-foreground mt-4 text-lg line-clamp-3">
                                             Implemented an end-to-end pipeline for dynamic question generation, answer analysis, and performance tracking using Generative AI.
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="pb-8 mt-auto">
+                                    <CardContent className="pb-8 mt-auto flex flex-col gap-6">
                                         <div className="flex flex-wrap gap-2">
                                             {["GenAI", "Activepieces", "LLM", "Workflow"].map(tag => (
                                                 <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
                                             ))}
+                                        </div>
+                                        <div className="flex gap-3">
+                                            <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
+                                                <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
+                                            </Button>
+                                            <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
+                                                <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
+                                            </Button>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -439,14 +480,14 @@ export default function Portfolio() {
                         >
                             <motion.div variants={slideInRight} className="mb-12 text-center lg:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Technical Arsenal</h2>
-                                <p className="text-slate-400 text-lg max-w-lg">A deep dive into the frameworks, languages, and tools I use to build scalable AI systems.</p>
+                                <p className="text-muted-foreground text-lg max-w-lg">A deep dive into the frameworks, languages, and tools I use to build scalable AI systems.</p>
                             </motion.div>
 
                             <div className="grid grid-cols-2 gap-4 mb-8 w-full">
                                 {coreSkills.map((skill) => (
                                     <motion.div key={skill.name} variants={fadeInUp}>
                                         <div className="glass p-5 rounded-2xl flex items-center gap-4 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all duration-300 group">
-                                            <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                                            <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)] skill-icon-glow">
                                                 <skill.icon className="w-5 h-5" />
                                             </div>
                                             <span className="text-sm md:text-base font-bold text-slate-100">{skill.name}</span>
@@ -483,7 +524,7 @@ export default function Portfolio() {
                         >
                             <motion.div variants={slideInRight} className="mb-12 text-center lg:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Education and Credentials</h2>
-                                <p className="text-slate-400 text-lg">Academic background and continuous learning certifications.</p>
+                                <p className="text-muted-foreground text-lg">Academic background and continuous learning certifications.</p>
                             </motion.div>
 
                             <motion.div variants={slideInRight} className="bg-[#12161F]/50 p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all mb-8">
@@ -494,7 +535,7 @@ export default function Portfolio() {
 
                             <motion.div variants={slideInRight} className="bg-[#12161F]/50 p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all mb-8">
                                 <h3 className="text-xl font-bold text-white mb-2">Diploma in Computer Science</h3>
-                                <p className="text-slate-400 font-medium mb-2">MEI Polytechnic, Bengaluru</p>
+                                <p className="text-muted-foreground font-medium mb-2">MEI Polytechnic, Bengaluru</p>
                                 <p className="text-slate-500 text-sm">2021–2024</p>
                             </motion.div>
 
@@ -511,7 +552,7 @@ export default function Portfolio() {
                                         "Ethical Hacking — Udemy",
                                         "Machine Learning — Infosys"
                                     ].map((cert, i) => (
-                                        <li key={i} className="bg-white/5 border border-white/5 p-4 rounded-xl text-slate-300 text-sm font-medium hover:bg-white/10 transition-colors">
+                                        <li key={i} className="bg-white/5 border border-white/5 p-4 rounded-xl text-slate-200 text-base font-medium hover:bg-white/10 transition-colors">
                                             {cert}
                                         </li>
                                     ))}
@@ -544,7 +585,7 @@ export default function Portfolio() {
                         >
                             <motion.div variants={slideInRight} className="mb-12 text-center lg:text-left">
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Professional Skills</h2>
-                                <p className="text-slate-400 text-lg">Beyond code, I bring strong interpersonal and strategic skills to every team I join.</p>
+                                <p className="text-muted-foreground text-lg">Beyond code, I bring strong interpersonal and strategic skills to every team I join.</p>
                             </motion.div>
                             <div className="space-y-6">
                                 {[
@@ -583,7 +624,7 @@ export default function Portfolio() {
                             <div className="grid lg:grid-cols-2 gap-12 items-center">
                                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
-                                    <p className="text-slate-400 mb-8 max-w-sm">Open for internship opportunities, research collaborations, or technical networking.</p>
+                                    <p className="text-muted-foreground mb-8 max-w-sm">Open for internship opportunities, research collaborations, or technical networking.</p>
                                     
                                     <div className="relative w-full max-w-[320px] aspect-square rounded-3xl overflow-hidden border border-white/10 mb-8">
                                         <video src="/13.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
@@ -631,7 +672,7 @@ export default function Portfolio() {
                                     <span className="text-2xl font-bold text-white tracking-tighter mb-4">
                                         Priya<span className="text-cyan-500">.ai</span>
                                     </span>
-                                    <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
+                                    <p className="text-muted-foreground text-base leading-relaxed max-w-xs">
                                         Architecting the next generation of intelligent systems through research-driven AI and scalable deep learning architectures.
                                     </p>
                                 </div>
@@ -674,10 +715,10 @@ export default function Portfolio() {
                             </div>
 
                             <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                                <p className="text-slate-600 text-xs font-medium uppercase tracking-widest">
+                                <p className="text-muted-foreground/60 text-xs font-medium uppercase tracking-widest">
                                     Built with Next.js and Framer Motion
                                 </p>
-                                <p className="text-slate-500 text-xs font-medium">
+                                <p className="text-muted-foreground/80 text-xs font-medium">
                                     © 2026 Priyadarshini V. All rights reserved.
                                 </p>
                             </div>
@@ -688,4 +729,4 @@ export default function Portfolio() {
         </main>
     </div>
 );
-}
+}
