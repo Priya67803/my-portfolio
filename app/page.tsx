@@ -656,7 +656,7 @@ export default function Portfolio() {
                                         </div>
                                         <div>
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Email</label>
-                                            <input type="email" placeholder="Enter mail" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                                            <input type="email" placeholder="Enter your mail" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
                                         </div>
                                         <div>
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Message</label>
