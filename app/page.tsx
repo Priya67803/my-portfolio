@@ -191,7 +191,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             <motion.h1 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 brand-logo">
-                                PRIYA V.<br />
+                                Priyadarshini V<br />
                                 <span className="text-gradient font-inter tracking-normal normal-case">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                             </motion.h1>
 
