@@ -316,8 +316,8 @@ export default function Portfolio() {
                             ].map((pub) => (
                                 <motion.div key={pub.id} variants={slideUp}>
                                     <Card className={`bg-[#12161F] border-white/10 overflow-hidden group hover:border-${pub.color}-500/50 transition-all duration-500 flex flex-col ${pub.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} min-h-[400px]`}>
-                                        <div className={`w-full lg:w-[45%] shrink-0 ${pub.reversed ? 'border-l' : 'border-r'} border-white/10 relative overflow-hidden`}>
-                                            <video src={pub.video} autoPlay muted loop playsInline className="w-full h-64 lg:h-full object-cover" />
+                                        <div className={`w-full lg:w-[45%] shrink-0 ${pub.reversed ? 'border-l' : 'border-r'} border-white/10 relative overflow-hidden h-64 lg:h-[450px]`}>
+                                            <video src={pub.video} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                         </div>
                                         <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
                                             <Badge variant="outline" className={`w-fit mb-6 bg-${pub.color}-500/10 text-${pub.color}-400 border-${pub.color}-500/20 text-sm px-3 py-1`}>
