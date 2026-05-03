@@ -172,7 +172,7 @@ export default function Portfolio() {
 
             <div className="relative z-10">
                 {/* Hero Section */}
-                <section id="home" className="min-h-[90vh] flex items-center overflow-hidden pt-24 pb-12">
+                <section id="home" className="min-h-[90vh] flex items-center overflow-hidden pt-28 md:pt-24 pb-12">
                     <motion.div 
                         className="max-w-7xl mx-auto px-6 w-full grid grid-cols-12 gap-8 md:gap-12 items-center"
                         initial="hidden"
@@ -218,8 +218,8 @@ export default function Portfolio() {
                             </motion.div>
                         </motion.div>
 
-                        <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2">
-                            <div className="relative w-[180px] sm:w-[240px] md:w-full max-w-[320px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass group">
+                        <motion.div variants={fadeInUp} className="col-span-12 md:col-span-5 relative flex justify-center items-center order-1 md:order-2 mb-8 md:mb-0">
+                            <div className="relative w-[180px] sm:w-[240px] md:w-full max-w-[320px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,209,255,0.2)] glass group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
                                 <video 
                                     src="/Profile.mp4" 
