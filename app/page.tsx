@@ -172,54 +172,56 @@ export default function Portfolio() {
 
                 <div className="relative z-10">
                     {/* Hero Section */}
-                    <section id="home" className="min-h-[90vh] flex items-center overflow-hidden pt-28 md:pt-24 pb-12">
+                    <section id="home" className="min-h-[90vh] flex items-center overflow-hidden pt-20 md:pt-24 pb-12">
                         <motion.div
-                            className="max-w-7xl mx-auto px-6 w-full flex flex-col lg:flex-row items-center justify-between gap-12"
+                            className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-row items-center justify-between gap-3 sm:gap-6 md:gap-12"
                             initial="hidden"
                             animate="visible"
                             variants={staggerContainer}
                         >
-                            <motion.div variants={staggerContainer} className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
+                            {/* Text — left side */}
+                            <motion.div variants={staggerContainer} className="flex flex-col items-start text-left flex-1 min-w-0">
                                 <motion.div variants={fadeInUp}>
-                                    <div className="inline-flex items-center gap-2 mb-6 md:mb-8 glass px-4 py-2 rounded-full border border-cyan-500/30 animate-breathe shadow-[0_0_20px_rgba(6,182,212,0.3)]">
-                                        <span className="relative flex h-3 w-3">
+                                    <div className="inline-flex items-center gap-1.5 mb-4 md:mb-8 glass px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-cyan-500/30 animate-breathe shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                                        <span className="relative flex h-2.5 w-2.5 md:h-3 md:w-3 shrink-0">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 md:h-3 md:w-3 bg-cyan-500"></span>
                                         </span>
-                                        <span className="text-xs md:text-sm font-semibold text-cyan-400 uppercase tracking-wider">Available for Internships</span>
+                                        <span className="text-[9px] sm:text-xs md:text-sm font-semibold text-cyan-400 uppercase tracking-wider whitespace-nowrap">Available for Internships</span>
                                     </div>
                                 </motion.div>
 
-                                <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 brand-logo">
-                                    Priyadarshini V<br />
-                                    <span className="text-gradient font-inter tracking-normal normal-case">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
+                                <motion.h1 variants={fadeInUp} className="text-[1.5rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-2 md:mb-4 brand-logo">
+                                    Priyadarshini V
+                                    <span className="text-gradient font-inter tracking-normal normal-case block text-[1.4rem] sm:text-4xl md:text-5xl lg:text-6xl">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                                 </motion.h1>
 
-                                <motion.p variants={fadeInUp} className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-4 font-medium">
+                                <motion.p variants={fadeInUp} className="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-2 md:mt-4 font-medium">
                                     Specializing in deep learning, machine learning, and the development of scalable AI solutions for solving complex industrial and real-world challenges.
                                 </motion.p>
 
-                                <motion.div variants={fadeInUp} className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 mt-8 md:mt-10">
-                                    <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-6 md:px-8 h-12 md:h-14 text-sm md:text-base font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                <motion.div variants={fadeInUp} className="flex flex-wrap justify-start gap-2 md:gap-4 mt-4 md:mt-10">
+                                    <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-3 sm:px-6 md:px-8 h-9 sm:h-12 md:h-14 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="#projects">
-                                            View Projects <ArrowRight className="ml-2 h-4 w-4" />
+                                            View Projects <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
-                                    <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                    <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-9 sm:h-12 md:h-14 px-3 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                                            Download CV <Download className="ml-2 h-4 w-4" />
+                                            Download CV <Download className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
-                                    <Button variant="outline" size="lg" asChild className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                    <Button variant="outline" size="lg" asChild className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 h-9 sm:h-12 md:h-14 px-3 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="#contact">
-                                            Contact Me <Mail className="ml-2 h-4 w-4" />
+                                            Contact Me <Mail className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
                                 </motion.div>
                             </motion.div>
 
-                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center flex-1 w-full">
-                                <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] glass group">
+                            {/* Profile image — right side, smaller on mobile */}
+                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center w-[120px] sm:w-[200px] md:w-[280px] lg:w-[340px] shrink-0">
+                                <div className="relative w-full aspect-[4/5] rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] glass group">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-40" />
                                     <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                                     <video
@@ -230,9 +232,8 @@ export default function Portfolio() {
                                         playsInline
                                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 relative z-0"
                                     />
-                                    <div className="absolute inset-0 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] pointer-events-none z-20" />
-                                    {/* Neon Glow Border Effect */}
-                                    <div className="absolute inset-0 rounded-[2.5rem] md:rounded-[3rem] shadow-[inset_0_0_30px_rgba(6,182,212,0.2)] pointer-events-none z-10" />
+                                    <div className="absolute inset-0 border border-white/10 rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] pointer-events-none z-20" />
+                                    <div className="absolute inset-0 rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] shadow-[inset_0_0_30px_rgba(6,182,212,0.2)] pointer-events-none z-10" />
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -243,7 +244,7 @@ export default function Portfolio() {
                     {/* Executive Summary */}
                     <section id="about" className="min-h-[50vh] flex items-center overflow-hidden py-24">
                         <motion.div
-                            className="max-w-4xl mx-auto px-6 text-center"
+                            className="max-w-4xl mx-auto px-6 w-full text-center"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-200px" }}
@@ -254,10 +255,10 @@ export default function Portfolio() {
                                     About Me
                                 </span>
                             </motion.div>
-                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-8 text-center whitespace-nowrap">
                                 Research-Driven AI Solutions
                             </h2>
-                            <div className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                            <div className="text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto text-center">
                                 <p>
                                     I am an aspiring Artificial Intelligence and Machine Learning engineer passionate about developing intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, predictive analytics, and full-stack development. I transform data into actionable insights and build scalable solutions that deliver measurable impact.
                                 </p>
