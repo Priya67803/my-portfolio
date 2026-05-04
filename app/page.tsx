@@ -595,7 +595,7 @@ export default function Portfolio() {
                                     </h3>
                                     <ul className="grid sm:grid-cols-2 gap-4">
                                         {[
-                                            { name: "Internship Certification — Razz Security", link: "/internship certificate.pdf" },
+                                            { name: "Internship Certification — Razz Security", link: "/internship%20certificate.pdf" },
                                             { name: "AWS Academy — ML Foundations", link: "/AWS_Academy_Graduate___Machine_Learning_Foundations___Training_Badge_Badge20251110-30-ja54zf.pdf" },
                                             { name: "Generative AI Leader — Google Cloud", link: "/Gen ai.pdf" },
                                             { name: "Deep Learning — Google Cloud", link: "/deep learning.pdf" },
