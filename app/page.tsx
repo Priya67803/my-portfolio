@@ -191,9 +191,9 @@ export default function Portfolio() {
                                     </div>
                                 </motion.div>
 
-                                <motion.h1 variants={fadeInUp} className="text-[1.5rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-2 md:mb-4 brand-logo">
+                                <motion.h1 variants={fadeInUp} className="text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-2 md:mb-4 brand-logo whitespace-nowrap sm:whitespace-normal">
                                     Priyadarshini V
-                                    <span className="text-gradient font-inter tracking-normal normal-case block text-[1.4rem] sm:text-4xl md:text-5xl lg:text-6xl">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
+                                    <span className="text-gradient font-inter tracking-normal normal-case block text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl whitespace-normal">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                                 </motion.h1>
 
                                 <motion.p variants={fadeInUp} className="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-2 md:mt-4 font-medium">
@@ -220,7 +220,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Profile image — right side, smaller on mobile */}
-                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center w-[120px] sm:w-[200px] md:w-[280px] lg:w-[340px] shrink-0">
+                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center w-[148px] sm:w-[200px] md:w-[280px] lg:w-[340px] shrink-0">
                                 <div className="relative w-full aspect-[4/5] rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] glass group">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-40" />
                                     <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
