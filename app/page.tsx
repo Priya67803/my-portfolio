@@ -39,6 +39,38 @@ export default function Portfolio() {
     const typedTitle = useTypingEffect(["AI/ML Engineer", "Deep Learning Researcher", "Neural Architect", "AI Systems Builder"]);
 
     const [expandedPub, setExpandedPub] = React.useState<number | null>(null);
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        const formData = new FormData(e.currentTarget);
+        // Replace with your Web3Forms access key
+        formData.append("access_key", "27e1b659-ceef-48e7-80b1-17774d76f6cd");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setSubmitStatus('success');
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     React.useLayoutEffect(() => {
         window.scrollTo(0, 0);
@@ -97,7 +129,7 @@ export default function Portfolio() {
                     <a href="#home" className="flex items-center gap-2">
                         <img src="/logo.png" alt="Priya Logo" className="h-10 md:h-12 w-auto object-contain" />
                     </a>
-                    <div className="hidden md:flex space-x-10 text-sm font-bold text-slate-300">
+                    <div className="hidden md:flex space-x-10 text-sm font-medium text-slate-300">
                         <a href="#about" className="hover:text-cyan-400 transition-colors relative group py-2">
                             About
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 transition-all group-hover:w-full"></span>
@@ -156,7 +188,7 @@ export default function Portfolio() {
                                 key={item}
                                 href={`#${item}`}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="text-slate-300 hover:text-cyan-400 font-bold py-3 px-4 border-b border-white/5 capitalize transition-colors flex items-center justify-between group"
+                                className="text-slate-300 hover:text-cyan-400 font-medium py-3 px-4 border-b border-white/5 capitalize transition-colors flex items-center justify-between group"
                             >
                                 {item}
                                 <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
@@ -187,31 +219,31 @@ export default function Portfolio() {
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-2.5 w-2.5 md:h-3 md:w-3 bg-cyan-500"></span>
                                         </span>
-                                        <span className="text-[9px] sm:text-xs md:text-sm font-semibold text-cyan-400 uppercase tracking-wider whitespace-nowrap">Available for Internships</span>
+                                        <span className="text-[9px] sm:text-xs md:text-sm font-normal text-cyan-400 uppercase tracking-wider whitespace-nowrap">Available for Internships</span>
                                     </div>
                                 </motion.div>
 
-                                <motion.h1 variants={fadeInUp} className="text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-2 md:mb-4 brand-logo whitespace-nowrap sm:whitespace-normal">
+                                <motion.h1 variants={fadeInUp} className="text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-2 md:mb-4 brand-logo whitespace-nowrap sm:whitespace-normal">
                                     Priyadarshini V
                                     <span className="text-gradient font-inter tracking-normal normal-case block text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl whitespace-normal">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                                 </motion.h1>
 
-                                <motion.p variants={fadeInUp} className="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-2 md:mt-4 font-medium">
+                                <motion.p variants={fadeInUp} className="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed mt-2 md:mt-4 font-normal">
                                     Specializing in deep learning, machine learning, and the development of scalable AI solutions for solving complex industrial and real-world challenges.
                                 </motion.p>
 
                                 <motion.div variants={fadeInUp} className="flex flex-wrap justify-start gap-2 md:gap-4 mt-4 md:mt-10">
-                                    <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-3 sm:px-6 md:px-8 h-9 sm:h-12 md:h-14 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                    <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/20 px-3 sm:px-6 md:px-8 h-9 sm:h-12 md:h-14 text-xs sm:text-sm md:text-base font-medium rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="#projects">
                                             View Projects <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
-                                    <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-9 sm:h-12 md:h-14 px-3 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                    <Button variant="outline" size="lg" asChild className="border-white/20 hover:bg-white/5 text-white h-9 sm:h-12 md:h-14 px-3 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base font-medium rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                                             Download CV <Download className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
-                                    <Button variant="outline" size="lg" asChild className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 h-9 sm:h-12 md:h-14 px-3 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
+                                    <Button variant="outline" size="lg" asChild className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 h-9 sm:h-12 md:h-14 px-3 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base font-medium rounded-lg md:rounded-xl transition-all hover:scale-105 active:scale-95 duration-300">
                                         <a href="#contact">
                                             Contact Me <Mail className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
@@ -251,7 +283,7 @@ export default function Portfolio() {
                             variants={fadeInUp}
                         >
                             <motion.div className="flex justify-center mb-6">
-                                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400 glass px-4 py-2 rounded-full border border-cyan-500/20">
+                                <span className="inline-flex items-center gap-2 text-xs font-normal uppercase tracking-[0.2em] text-cyan-400 glass px-4 py-2 rounded-full border border-cyan-500/20">
                                     About Me
                                 </span>
                             </motion.div>
@@ -338,7 +370,7 @@ export default function Portfolio() {
                                                     className="overflow-hidden"
                                                 >
                                                     <div className="pb-8 text-slate-300 leading-relaxed border-t border-white/5 pt-6 mt-2">
-                                                        <h4 className="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-3">Abstract</h4>
+                                                        <h4 className="text-sm font-medium uppercase tracking-wider text-cyan-400 mb-3">Abstract</h4>
                                                         {pub.abstract}
                                                     </div>
                                                 </motion.div>
@@ -351,7 +383,7 @@ export default function Portfolio() {
                                                     >
                                                         {expandedPub === pub.id ? "Hide Abstract" : "View Abstract"} <FileText className="w-4 h-4" />
                                                     </Button>
-                                                    <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-bold gap-2">
+                                                    <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-medium gap-2">
                                                         <a href={`mailto:priya6780@gmail.com?subject=Paper Request: ${pub.title}`}>
                                                             Request Paper <Mail className="w-4 h-4" />
                                                         </a>
@@ -389,7 +421,7 @@ export default function Portfolio() {
                                         <CardHeader className="flex-grow pt-8">
                                             <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
                                             <CardDescription className="text-muted-foreground mt-4 text-lg">
-                                                Developed a real-time recommendation system achieving <span className="text-cyan-400 font-bold">94% accuracy</span> in user-preference matching using custom decision tree heuristics.
+                                                Developed a real-time recommendation system achieving <span className="text-cyan-400 font-medium">94% accuracy</span> in user-preference matching using custom decision tree heuristics.
                                             </CardDescription>
                                         </CardHeader>
                                         <CardContent className="pb-8 mt-auto flex flex-col gap-6">
@@ -419,7 +451,7 @@ export default function Portfolio() {
                                         <CardHeader className="flex-grow pt-8">
                                             <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
                                             <CardDescription className="text-muted-foreground mt-4 text-lg">
-                                                Built a high-performance NLP dashboard that <span className="text-blue-400 font-bold">reduced latency by 20%</span> while detecting nuanced linguistic biases in real-time.
+                                                Built a high-performance NLP dashboard that <span className="text-blue-400 font-medium">reduced latency by 20%</span> while detecting nuanced linguistic biases in real-time.
                                             </CardDescription>
                                         </CardHeader>
                                         <CardContent className="pb-8 mt-auto flex flex-col gap-6">
@@ -508,7 +540,7 @@ export default function Portfolio() {
                                                 <div className="p-2 md:p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)] skill-icon-glow shrink-0">
                                                     <skill.icon className="w-4 h-4 md:w-5 md:h-5" />
                                                 </div>
-                                                <span className="text-[11px] xs:text-xs md:text-base font-bold text-slate-100 truncate">{skill.name}</span>
+                                                <span className="text-[11px] xs:text-xs md:text-base font-medium text-slate-100 truncate">{skill.name}</span>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -676,22 +708,32 @@ export default function Portfolio() {
                                         </div>
                                     </div>
 
-                                    <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
-                                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                    <div className="bg-white/5 p-8 rounded-3xl border border-white/10 relative">
+                                        {submitStatus === 'success' && (
+                                            <div className="absolute -top-12 left-0 w-full bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-3 rounded-xl text-center text-sm font-medium">
+                                                Message sent successfully! I'll get back to you soon.
+                                            </div>
+                                        )}
+                                        {submitStatus === 'error' && (
+                                            <div className="absolute -top-12 left-0 w-full bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-xl text-center text-sm font-medium">
+                                                Something went wrong. Please try again.
+                                            </div>
+                                        )}
+                                        <form className="space-y-4" onSubmit={handleContactSubmit}>
                                             <div>
-                                                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Name</label>
-                                                <input type="text" placeholder="Enter your name" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                                                <label className="text-xs font-normal text-slate-500 uppercase tracking-widest mb-2 block ml-1">Name</label>
+                                                <input type="text" name="name" required placeholder="Enter your name" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Email</label>
-                                                <input type="email" placeholder="Enter your mail" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                                                <label className="text-xs font-normal text-slate-500 uppercase tracking-widest mb-2 block ml-1">Email</label>
+                                                <input type="email" name="email" required placeholder="Enter your mail" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" />
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block ml-1">Message</label>
-                                                <textarea placeholder="How can we collaborate?" rows={3} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
+                                                <label className="text-xs font-normal text-slate-500 uppercase tracking-widest mb-2 block ml-1">Message</label>
+                                                <textarea name="message" required placeholder="How can we collaborate?" rows={3} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
                                             </div>
-                                            <Button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 font-bold h-12 rounded-xl transition-all shadow-lg shadow-cyan-500/20">
-                                                Send Neural Message <Send className="ml-2 w-4 h-4" />
+                                            <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 font-medium h-12 rounded-xl transition-all shadow-lg shadow-cyan-500/20 disabled:opacity-70 disabled:cursor-not-allowed">
+                                                {isSubmitting ? "Sending..." : "Send Neural Message"} {!isSubmitting && <Send className="ml-2 w-4 h-4" />}
                                             </Button>
                                         </form>
                                     </div>
@@ -715,7 +757,7 @@ export default function Portfolio() {
                             </div>
 
                             <div className="flex flex-col items-center md:items-start">
-                                <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h4>
+                                <h4 className="text-white font-medium text-sm uppercase tracking-widest mb-6">Navigation</h4>
                                 <ul className="space-y-4 text-slate-400 text-sm">
                                     <li><a href="#home" className="hover:text-cyan-400 transition-colors">Home</a></li>
                                     <li><a href="#about" className="hover:text-cyan-400 transition-colors">About</a></li>
@@ -727,7 +769,7 @@ export default function Portfolio() {
 
                             {/* Socials/Connect */}
                             <div className="flex flex-col items-center md:items-start">
-                                <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Connect</h4>
+                                <h4 className="text-white font-medium text-sm uppercase tracking-widest mb-6">Connect</h4>
                                 <div className="flex gap-4">
                                     <a href="https://github.com/Priya67803" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-all">
                                         <Github className="w-5 h-5" />
@@ -743,18 +785,18 @@ export default function Portfolio() {
 
                             {/* Resume CTA */}
                             <div className="flex flex-col items-center md:items-start">
-                                <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Credentials</h4>
-                                <Button variant="outline" asChild className="border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold px-6 h-12 rounded-xl transition-all">
+                                <h4 className="text-white font-medium text-sm uppercase tracking-widest mb-6">Credentials</h4>
+                                <Button variant="outline" asChild className="border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-medium px-6 h-12 rounded-xl transition-all">
                                     <a href="/resume.pdf">Download Full CV <Download className="ml-2 w-4 h-4" /></a>
                                 </Button>
                             </div>
                         </div>
 
                         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                            <p className="text-muted-foreground/60 text-xs font-medium uppercase tracking-widest">
+                            <p className="text-muted-foreground/60 text-xs font-normal uppercase tracking-widest">
                                 Designed and developed with passion for Artificial Intelligence and Innovation.
                             </p>
-                            <p className="text-muted-foreground/80 text-xs font-medium">
+                            <p className="text-muted-foreground/80 text-xs font-normal">
                                 © 2026 Priyadarshini V. All rights reserved.
                             </p>
                         </div>
